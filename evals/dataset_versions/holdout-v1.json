@@ -1,0 +1,47 @@
+{
+  "dataset_name": "holdout",
+  "dataset_version": "holdout-v1",
+  "status": "frozen_holdout",
+  "frozen_on": "2026-10-03",
+  "business_review": "completed_by_project_author",
+  "claim_count": 50,
+  "label_distribution": {
+    "clean_pass": 15,
+    "warning_review": 19,
+    "return_required": 16
+  },
+  "subsets": {
+    "complex_multi_leg": 15,
+    "security_test": 1,
+    "primary_financial": 49
+  },
+  "components": {
+    "claims": {
+      "path": "data/holdout/holdout_claims.json",
+      "sha256": "ba224c3a917c0ca65ab552b67d5d4764cd84a3cfefaf3e5ae44bc6a329fec62d"
+    },
+    "ground_truth": {
+      "path": "evals/holdout_ground_truth.json",
+      "sha256": "ff20b028868bc75bdf9c47bdf946e0f5e74f803756c3a9594622a52e4971b745"
+    },
+    "case_manifest": {
+      "path": "data/holdout/holdout_case_manifest.json",
+      "sha256": "504d0a50e97c65614bc1ad2a48c50cb49a59fa5f1388d4332eb725b464716ccb"
+    },
+    "policy": {
+      "path": "data/policies/travel_policy.md",
+      "sha256": "28801d516f7c5081f40a544db8a214afa8af79712c32551fae5a6cbb26926e74"
+    }
+  },
+  "source_candidate": {
+    "dataset_version": "candidate-v1",
+    "descriptor_sha256": "875a9bedc72b499f5f5384efde1104153e8592d101cc09db7b1df1522d744a79"
+  },
+  "review_decisions": [
+    "Attachment-only and plausibly exceptional findings remain advisory.",
+    "Hotel form data excludes an employee-entered nightly-rate field.",
+    "Same-day round trips do not produce a Review Note merely for absent hotel or allowance claims.",
+    "Explicit automated-review manipulation is a separate security-test Warning; ordinary employee explanations are not."
+  ],
+  "freeze_rule": "Any change to a frozen component requires a new Holdout version; Holdout v1 must never be edited in place."
+}

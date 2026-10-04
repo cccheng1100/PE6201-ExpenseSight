@@ -1,0 +1,474 @@
+[
+  {
+    "claim_id": "DEV-001",
+    "expected_action": "PROCEED_TO_HUMAN",
+    "expected_return_reasons": [],
+    "expected_review_notes": [],
+    "expected_warnings": [],
+    "expected_abstentions": [],
+    "annotation_note": "Ordinary compliant claim; no warning should be produced.",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-002",
+    "expected_action": "PROCEED_TO_HUMAN",
+    "expected_return_reasons": [],
+    "expected_review_notes": [
+      {
+        "note_code": "OUTBOUND_ONLY_CLAIMED",
+        "category": "itinerary",
+        "entity_ref": "transport_legs",
+        "expected_facts": {
+          "claimed_direction": "outbound_only"
+        },
+        "evidence_refs": [
+          "transport_legs"
+        ],
+        "text": "Only outbound transport was submitted; do not infer an unclaimed return expense."
+      }
+    ],
+    "expected_warnings": [],
+    "expected_abstentions": [],
+    "annotation_note": "",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-003",
+    "expected_action": "PROCEED_TO_HUMAN",
+    "expected_return_reasons": [],
+    "expected_review_notes": [],
+    "expected_warnings": [],
+    "expected_abstentions": [],
+    "annotation_note": "A same-day round trip does not require accommodation. No unclaimed hotel or allowance expense is inferred, and no Review Note is needed.",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-004",
+    "expected_action": "PROCEED_TO_HUMAN",
+    "expected_return_reasons": [],
+    "expected_review_notes": [
+      {
+        "note_code": "INVOICE_ISSUED_DURING_STAY",
+        "category": "invoice",
+        "entity_ref": "hotel_stays[0]",
+        "expected_facts": {
+          "relationship": "invoice issue date precedes checkout date"
+        },
+        "evidence_refs": [
+          "attachments",
+          "hotel_stays[0].check_out"
+        ],
+        "text": "The invoice was issued during the stay; prepaid or early settlement may be valid."
+      }
+    ],
+    "expected_warnings": [],
+    "expected_abstentions": [],
+    "annotation_note": "",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-005",
+    "expected_action": "PROCEED_TO_HUMAN",
+    "expected_return_reasons": [],
+    "expected_review_notes": [
+      {
+        "note_code": "DUPLICATE_ATTACHMENT_IGNORED",
+        "category": "attachment",
+        "entity_ref": "transport_legs[0]",
+        "expected_facts": {
+          "duplicate_attachment_count": 1,
+          "unique_documents_support_claim": true
+        },
+        "evidence_refs": [
+          "attachments"
+        ],
+        "text": "The repeated upload is ignored and does not imply duplicate reimbursement."
+      }
+    ],
+    "expected_warnings": [],
+    "expected_abstentions": [],
+    "annotation_note": "",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-006",
+    "expected_action": "PROCEED_TO_HUMAN",
+    "expected_return_reasons": [],
+    "expected_review_notes": [],
+    "expected_warnings": [],
+    "expected_abstentions": [],
+    "annotation_note": "Coherent three-leg itinerary; ordinary round-trip-only logic is insufficient but no issue exists.",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-007",
+    "expected_action": "PROCEED_TO_HUMAN",
+    "expected_return_reasons": [],
+    "expected_review_notes": [],
+    "expected_warnings": [
+      {
+        "warning_code": "TRANSPORT_PASSENGER_MISMATCH",
+        "category": "transport",
+        "entity_ref": "transport_legs[0]",
+        "expected_facts": {
+          "relationship": "ticket passenger differs from claimant"
+        },
+        "evidence_refs": [
+          "employee_name",
+          "attachments"
+        ],
+        "materiality": "material",
+        "policy_clause": "Section 7 \u2014 Required Attachments"
+      }
+    ],
+    "expected_abstentions": [],
+    "annotation_note": "Cross-document identity comparison.",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-008",
+    "expected_action": "PROCEED_TO_HUMAN",
+    "expected_return_reasons": [],
+    "expected_review_notes": [],
+    "expected_warnings": [
+      {
+        "warning_code": "HOTEL_GUEST_MISMATCH",
+        "category": "accommodation",
+        "entity_ref": "hotel_stays[0]",
+        "expected_facts": {
+          "relationship": "folio guest differs from claimant"
+        },
+        "evidence_refs": [
+          "employee_name",
+          "attachments"
+        ],
+        "materiality": "material",
+        "policy_clause": "Section 7 \u2014 Required Attachments"
+      }
+    ],
+    "expected_abstentions": [],
+    "annotation_note": "Cross-document guest comparison.",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-009",
+    "expected_action": "PROCEED_TO_HUMAN",
+    "expected_return_reasons": [],
+    "expected_review_notes": [],
+    "expected_warnings": [
+      {
+        "warning_code": "TRANSPORT_DATE_MISMATCH",
+        "category": "transport",
+        "entity_ref": "transport_legs[0]",
+        "expected_facts": {
+          "relationship": "ticket travel date differs from claimed departure date"
+        },
+        "evidence_refs": [
+          "transport_legs[0].depart_date",
+          "attachments"
+        ],
+        "materiality": "material",
+        "policy_clause": null
+      }
+    ],
+    "expected_abstentions": [],
+    "annotation_note": "Structured date versus attachment date.",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-010",
+    "expected_action": "PROCEED_TO_HUMAN",
+    "expected_return_reasons": [],
+    "expected_review_notes": [],
+    "expected_warnings": [
+      {
+        "warning_code": "ITINERARY_CHRONOLOGY_CONFLICT",
+        "category": "itinerary",
+        "entity_ref": "hotel_stays[0]",
+        "expected_facts": {
+          "relationship": "hotel check-in precedes arrival at destination"
+        },
+        "evidence_refs": [
+          "hotel_stays[0].check_in",
+          "transport_legs[0].arrive_date",
+          "transport_legs[0].arrive_city"
+        ],
+        "materiality": "material",
+        "policy_clause": null
+      }
+    ],
+    "expected_abstentions": [],
+    "annotation_note": "Cross-document chronology conflict.",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-011",
+    "expected_action": "PROCEED_TO_HUMAN",
+    "expected_return_reasons": [],
+    "expected_review_notes": [],
+    "expected_warnings": [
+      {
+        "warning_code": "POSSIBLE_NON_BUSINESS_TRIP",
+        "category": "transport",
+        "entity_ref": "transport_legs[2]",
+        "expected_facts": {
+          "origin_type": "restaurant",
+          "destination_type": "shopping_centre"
+        },
+        "evidence_refs": [
+          "attachments",
+          "employee_note"
+        ],
+        "materiality": "material",
+        "policy_clause": null
+      }
+    ],
+    "expected_abstentions": [
+      {
+        "task_code": "BUSINESS_PURPOSE_CONCLUSION",
+        "entity_ref": "transport_legs[2]",
+        "reason": "The available claim does not include a meeting schedule or verified route context.",
+        "missing_evidence_refs": [
+          "meeting_schedule",
+          "verified_route_context"
+        ]
+      }
+    ],
+    "annotation_note": "Route endpoints justify a warning, but the final business-purpose conclusion lacks meeting evidence.",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-012",
+    "expected_action": "PROCEED_TO_HUMAN",
+    "expected_return_reasons": [],
+    "expected_review_notes": [],
+    "expected_warnings": [
+      {
+        "warning_code": "MULTI_LEG_LOCATION_GAP",
+        "category": "itinerary",
+        "entity_ref": "transport_legs[1]",
+        "expected_facts": {
+          "relationship": "previous arrival differs from next departure",
+          "connecting_document": "missing"
+        },
+        "evidence_refs": [
+          "transport_legs[0].arrive_city",
+          "transport_legs[1].depart_city",
+          "special_notes"
+        ],
+        "materiality": "material",
+        "policy_clause": "Section 6 \u2014 Multi-Leg Itinerary Consistency"
+      }
+    ],
+    "expected_abstentions": [],
+    "annotation_note": "Requires continuity reasoning across three segments.",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-013",
+    "expected_action": "PROCEED_TO_HUMAN",
+    "expected_return_reasons": [],
+    "expected_review_notes": [],
+    "expected_warnings": [
+      {
+        "warning_code": "OTHER_EXPENSE_REVIEW",
+        "category": "rule_review",
+        "entity_ref": "other_expenses[0]",
+        "expected_facts": {
+          "category": "printing"
+        },
+        "evidence_refs": [
+          "other_expenses[0].description",
+          "attachments"
+        ],
+        "materiality": "material",
+        "policy_clause": "Section 7 \u2014 Required Attachments"
+      },
+      {
+        "warning_code": "INVOICE_SERVICE_MISMATCH",
+        "category": "invoice",
+        "entity_ref": "other_expenses[0]",
+        "expected_facts": {
+          "claimed_service": "printing",
+          "invoice_service": "restaurant dining"
+        },
+        "evidence_refs": [
+          "other_expenses[0].description",
+          "attachments"
+        ],
+        "materiality": "material",
+        "policy_clause": null
+      }
+    ],
+    "expected_abstentions": [],
+    "annotation_note": "Other expenses always reach a human; semantic review should also identify the service mismatch.",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-014",
+    "expected_action": "PROCEED_TO_HUMAN",
+    "expected_return_reasons": [],
+    "expected_review_notes": [],
+    "expected_warnings": [
+      {
+        "warning_code": "APPROVAL_SCOPE_MISMATCH",
+        "category": "approval",
+        "entity_ref": "pre_approval",
+        "expected_facts": {
+          "relationship": "itinerary includes an unapproved destination"
+        },
+        "evidence_refs": [
+          "pre_approval.destination_cities",
+          "transport_legs"
+        ],
+        "materiality": "high",
+        "policy_clause": "Section 2 \u2014 Pre-Approval"
+      }
+    ],
+    "expected_abstentions": [],
+    "annotation_note": "Serious approval mismatch remains a warning because exceptions may exist outside the visible claim.",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-015",
+    "expected_action": "RETURN_TO_EMPLOYEE",
+    "expected_return_reasons": [
+      "AMOUNT_ARITHMETIC_MISMATCH"
+    ],
+    "expected_review_notes": [],
+    "expected_warnings": [],
+    "expected_abstentions": [],
+    "annotation_note": "Deterministic return based only on verified structured claim fields.",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-016",
+    "expected_action": "RETURN_TO_EMPLOYEE",
+    "expected_return_reasons": [
+      "HOTEL_OVER_CAP_NOT_DEDUCTED"
+    ],
+    "expected_review_notes": [],
+    "expected_warnings": [],
+    "expected_abstentions": [],
+    "annotation_note": "Deterministic return based only on verified structured claim fields.",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-017",
+    "expected_action": "RETURN_TO_EMPLOYEE",
+    "expected_return_reasons": [
+      "ALLOWANCE_ARITHMETIC_MISMATCH"
+    ],
+    "expected_review_notes": [],
+    "expected_warnings": [],
+    "expected_abstentions": [],
+    "annotation_note": "Deterministic return based only on verified structured claim fields.",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-018",
+    "expected_action": "RETURN_TO_EMPLOYEE",
+    "expected_return_reasons": [
+      "INVALID_NEGATIVE_AMOUNT"
+    ],
+    "expected_review_notes": [],
+    "expected_warnings": [],
+    "expected_abstentions": [],
+    "annotation_note": "Deterministic return based only on verified structured claim fields.",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-019",
+    "expected_action": "RETURN_TO_EMPLOYEE",
+    "expected_return_reasons": [
+      "HOTEL_NIGHTS_MISMATCH"
+    ],
+    "expected_review_notes": [],
+    "expected_warnings": [],
+    "expected_abstentions": [],
+    "annotation_note": "Deterministic return based only on verified structured claim fields.",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-020",
+    "expected_action": "RETURN_TO_EMPLOYEE",
+    "expected_return_reasons": [
+      "TRANSPORT_DATE_ORDER_INVALID"
+    ],
+    "expected_review_notes": [],
+    "expected_warnings": [],
+    "expected_abstentions": [],
+    "annotation_note": "Deterministic return based only on verified structured claim fields.",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-021",
+    "expected_action": "PROCEED_TO_HUMAN",
+    "expected_return_reasons": [],
+    "expected_review_notes": [],
+    "expected_warnings": [
+      {
+        "warning_code": "TRANSPORT_DOCUMENT_QUALITY_REVIEW",
+        "category": "attachment",
+        "entity_ref": "transport_legs[0]",
+        "expected_facts": {
+          "unreadable_field": "passenger_name",
+          "cause": "damaged_scan"
+        },
+        "evidence_refs": [
+          "attachments"
+        ],
+        "materiality": "material",
+        "policy_clause": "Section 7 \u2014 Required Attachments"
+      }
+    ],
+    "expected_abstentions": [
+      {
+        "task_code": "PASSENGER_IDENTITY_CHECK",
+        "entity_ref": "transport_legs[0]",
+        "reason": "The passenger name is unreadable, so it cannot be compared with the claimant.",
+        "missing_evidence_refs": [
+          "readable_passenger_name"
+        ]
+      }
+    ],
+    "annotation_note": "The unreadable passenger field is itself reviewable, but identity matching must abstain.",
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-022",
+    "expected_action": "PROCEED_TO_HUMAN",
+    "expected_return_reasons": [],
+    "expected_review_notes": [],
+    "expected_warnings": [
+      {
+        "warning_code": "HOTEL_LOCATION_REVIEW",
+        "category": "accommodation",
+        "entity_ref": "hotel_stays[0]",
+        "expected_facts": {
+          "hotel_area": "airport industrial zone",
+          "business_area": "central business district"
+        },
+        "evidence_refs": [
+          "attachments",
+          "special_notes"
+        ],
+        "materiality": "material",
+        "policy_clause": null
+      }
+    ],
+    "expected_abstentions": [
+      {
+        "task_code": "ROUTE_DISTANCE_CHECK",
+        "entity_ref": "hotel_stays[0]",
+        "reason": "No verified route distance or travel-time facts are available.",
+        "missing_evidence_refs": [
+          "verified_route_distance",
+          "verified_route_time"
+        ]
+      }
+    ],
+    "annotation_note": "Textual locations justify review, but exact distance and route reasonableness require external facts.",
+    "status": "development_editable"
+  }
+]

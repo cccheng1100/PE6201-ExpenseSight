@@ -1,0 +1,111 @@
+{
+  "configuration_version": "semantic-review-v2",
+  "status": "final_holdout_evaluated",
+  "created_on": "2026-10-03",
+  "model": "google/gemini-3.5-flash-lite",
+  "configuration_sha256": "2cfb6311ed7f5f878c28d85416d906f57e37a7c0d21b0df9037f1810d9173fee",
+  "pipeline_contract": "model-output-pipeline-v2",
+  "component_hashes": {
+    "semantic_review_system": "dcce8d405d236fb3e266e76e7fca28cd2ead83d0569ffd79d5557be2df7a60f9",
+    "semantic_review_request": "7751c823fbfcae61e79e7794929b873aaf7acf120d986717023bea4168ad2a69",
+    "policy_context": "b8487dd89871cd83184517d805f6a373a34750c1f578cdb28d48b9036ef0938e",
+    "warning_taxonomy": "68499b00689cc0554c44cfa48405e36ae1441304a3dd625f395f45a95bcb3c97",
+    "output_schema": "05c63fa7cec04e42e4a649ed558616ed5f393126b2f2ae802659c99ccfb0e9be"
+  },
+  "dev_dataset": {
+    "version": "dev-v1",
+    "claims_sha256": "2f3b0c0b744139fbc493d309acdcbc218773607d6c419fba1c937a6ed58f22c6",
+    "ground_truth_sha256": "2ba56a0c7e58f3661ed4a74f703c283c8be9894f5f7a9b1b9f70d84d28adaedb",
+    "case_manifest_sha256": "c14b6e010a23a5e0d4ec2ad8beafd97b5862398906bbafbfaedda7c3bc8e00f6",
+    "policy_sha256": "28801d516f7c5081f40a544db8a214afa8af79712c32551fae5a6cbb26926e74"
+  },
+  "changes_from_v1": [
+    "Hotel form data no longer contains an employee-entered nightly-rate field; deterministic cap checks derive average rate from reimbursable total divided by nights.",
+    "Same-day round trips without hotel or allowance no longer produce a Review Note.",
+    "Ordinary employee explanations are distinguished from explicit attempts to manipulate automated review behaviour.",
+    "PROMPT_INJECTION_TEXT is reserved for explicit policy-bypass or outcome-manipulation instructions."
+  ],
+  "validation_required": {
+    "eligible_dev_calls": 16,
+    "resume_from_v1_allowed": false,
+    "paid_calls_completed": true,
+    "holdout_use_allowed": true
+  },
+  "dev_artifacts": {
+    "model_outputs": {
+      "path": "evals/results/model_outputs_dev_semantic-review-v2.json",
+      "sha256": "453b4cbda48c0d7342f9003c005581aefc58074b54bbc26ea48a8b9a54e74979"
+    },
+    "metadata": {
+      "path": "evals/results/model_outputs_dev_semantic-review-v2.metadata.json",
+      "sha256": "7605045f0e71181dccf61c1587188dc44b482eb9f12c1ec3e182c34986e659c7"
+    },
+    "evaluation": {
+      "path": "evals/results/hybrid_dev_semantic-review-v2.json",
+      "sha256": "5c23bcf0010ec8fc849cdf27818b1d9eeea1e7da28cdc73b5b57e676f78f6a3e"
+    }
+  },
+  "dev_usage": {
+    "call_count": 16,
+    "prompt_tokens": 202137,
+    "completion_tokens": 3196,
+    "total_tokens": 205333
+  },
+  "dev_metrics": {
+    "false_return_rate": 0.0,
+    "warning_recall": 1.0,
+    "warning_precision": 0.9166666666666666,
+    "warning_fact_recall_diagnostic": 0.36363636363636365,
+    "unsupported_warning_rate": 0.08333333333333333,
+    "clean_case_warning_rate": 0.0,
+    "review_note_recall_diagnostic": 1.0,
+    "material_issue_recall": 1.0,
+    "evidence_reference_validity": 1.0,
+    "appropriate_abstention": 1.0
+  },
+  "known_dev_deviation": "DEV-011 emitted an additional HOTEL_LOCATION_REVIEW warning from generic hotel and business-place names without a concrete conflicting area description. It did not create a false return or a clean-case warning. The result is retained and reported rather than prompting another Dev-tuning cycle.",
+  "holdout_dataset": {
+    "version": "holdout-v1",
+    "descriptor_path": "evals/dataset_versions/holdout-v1.json",
+    "descriptor_sha256": "547e24e6fd0ceadc1abd377f46737aef6adcc82ee0c4385ca8b026c6c0eaec75",
+    "claim_count": 50,
+    "model_review_eligible_claims": 34,
+    "paid_calls_completed": 34,
+    "rules_only_result": {
+      "path": "evals/results/rules_only_holdout-v1.json",
+      "sha256": "af59f4b60a58cc3ce57a2eefef716f8d71bfc01d56b621ff1ea06d59a0023474"
+    },
+    "hybrid_artifacts": {
+      "model_outputs": {
+        "path": "evals/results/model_outputs_holdout-v1_semantic-review-v2.json",
+        "sha256": "e2572aeebafe538a303a7fc053dc00a5a1f689a092a5aff8e8f8cd402282b035"
+      },
+      "metadata": {
+        "path": "evals/results/model_outputs_holdout-v1_semantic-review-v2.metadata.json",
+        "sha256": "9e46c710b97fc23393af15f1f6de712567d9925185e99a4a18aea42d6dba6f96"
+      },
+      "evaluation": {
+        "path": "evals/results/hybrid_holdout-v1_semantic-review-v2.json",
+        "sha256": "9967bcd5496c3e00f1cfacc736c14a74103ba365f7508b0ff38f07d769858339"
+      }
+    },
+    "usage": {
+      "call_count": 34,
+      "prompt_tokens": 431972,
+      "completion_tokens": 4663,
+      "total_tokens": 436635
+    },
+    "hybrid_metrics": {
+      "false_return_rate": 0.0,
+      "return_precision": 1.0,
+      "return_recall": 1.0,
+      "warning_recall": 1.0,
+      "warning_precision": 0.8695652173913043,
+      "unsupported_warning_rate": 0.13043478260869565,
+      "clean_case_warning_rate": 0.13333333333333333,
+      "material_issue_recall": 1.0,
+      "evidence_reference_validity": 1.0
+    }
+  },
+  "freeze_rule": "This exact fingerprint is frozen for Holdout. Do not change the model, prompts, policy context, taxonomy, output schema, or pipeline contract after Holdout evaluation begins."
+}

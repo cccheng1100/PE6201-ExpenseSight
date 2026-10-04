@@ -1,0 +1,403 @@
+[
+  {
+    "claim_id": "CAND-001",
+    "origin": "manual-derived",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-002",
+    "origin": "manual-derived",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-003",
+    "origin": "manual-derived",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-004",
+    "origin": "manual-derived",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-005",
+    "origin": "manual-derived",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-006",
+    "origin": "manual-derived",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-007",
+    "origin": "manual-derived",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-008",
+    "origin": "manual-derived",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-009",
+    "origin": "manual-derived",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-010",
+    "origin": "manual-derived",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-011",
+    "origin": "manual-derived",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-012",
+    "origin": "manual-derived",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-013",
+    "origin": "manual-derived",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-014",
+    "origin": "manual-derived",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-015",
+    "origin": "manual-derived",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-016",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-017",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-018",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-019",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-020",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-021",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-022",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-023",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-024",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-025",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-026",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-027",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-028",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-029",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-030",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-031",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-032",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-033",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary",
+      "security_test"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-034",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-035",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-036",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-037",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-038",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-039",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-040",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-041",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-042",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-043",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-044",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-045",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-046",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-047",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-048",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-049",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  },
+  {
+    "claim_id": "CAND-050",
+    "origin": "generated-and-reviewed",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "candidate_requires_business_review"
+  }
+]

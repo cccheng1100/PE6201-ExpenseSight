@@ -1,0 +1,339 @@
+[
+  {
+    "claim_id": "DEV-010",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "ITINERARY_CHRONOLOGY_CONFLICT",
+        "category": "itinerary",
+        "entity_ref": "hotel_stays[0]",
+        "facts": {
+          "relationship": "hotel check-in precedes arrival at destination",
+          "hotel_check_in": "2026-01-03",
+          "destination_arrival": "2026-01-04"
+        },
+        "evidence_refs": [
+          "hotel_stays[0]",
+          "transport_legs[0]"
+        ],
+        "policy_clause": null,
+        "materiality": "material",
+        "explanation": "The hotel check-in date in Hangzhou (2026-01-03) precedes the travel date of the first transport leg to Hangzhou (2026-01-04)."
+      }
+    ],
+    "abstentions": []
+  },
+  {
+    "claim_id": "DEV-011",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "POSSIBLE_NON_BUSINESS_TRIP",
+        "category": "itinerary",
+        "entity_ref": "transport_legs[2]",
+        "facts": {
+          "origin_type": "restaurant",
+          "destination_type": "shopping centre",
+          "declared_business_location": "Jinan"
+        },
+        "evidence_refs": [
+          "transport_legs[2]",
+          "attachments[2]"
+        ],
+        "policy_clause": null,
+        "materiality": "material",
+        "explanation": "Visible route endpoints for the local rideshare trip from Jinan Riverside Restaurant to Jinan Central Mall appear inconsistent with the declared business purpose of meetings at Jinan Q Company."
+      }
+    ],
+    "abstentions": [
+      {
+        "task_code": "BUSINESS_PURPOSE_CONCLUSION",
+        "entity_ref": "transport_legs[2]",
+        "reason": "Visible route endpoints indicate commercial or recreational venues rather than a verified business site, and no meeting schedule or detailed itinerary is supplied to confirm the business purpose of the local travel.",
+        "missing_evidence_refs": [
+          "employee_note"
+        ]
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-022",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "HOTEL_LOCATION_REVIEW",
+        "category": "accommodation",
+        "entity_ref": "hotel_stays[0]",
+        "facts": {
+          "hotel_area": "North Airport Industrial Zone, Hefei",
+          "business_area": "Hefei Q Company, Central Business District"
+        },
+        "evidence_refs": [
+          "hotel_stays[0]",
+          "special_notes",
+          "attachments[2]"
+        ],
+        "policy_clause": null,
+        "materiality": "material",
+        "explanation": "The hotel is located in the North Airport Industrial Zone, which appears inconsistent with the declared business location at the Central Business District."
+      }
+    ],
+    "abstentions": [
+      {
+        "task_code": "ROUTE_DISTANCE_CHECK",
+        "entity_ref": "hotel_stays[0]",
+        "reason": "Verified distance or travel-time facts between the hotel location and the declared business area are unavailable.",
+        "missing_evidence_refs": [
+          "hotel_stays[0]",
+          "attachments[2]"
+        ]
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-001",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "DEV-002",
+    "review_notes": [
+      {
+        "note_code": "OUTBOUND_ONLY_CLAIMED",
+        "category": "itinerary",
+        "entity_ref": "transport_legs",
+        "facts": {
+          "claimed_direction": "outbound_only"
+        },
+        "evidence_refs": [
+          "transport_legs"
+        ],
+        "text": "The submitted transport legs show only an outbound direction from Wuhan to Hangzhou. This is an outbound-only claim scope; no return transport is claimed, and no return expense is inferred."
+      }
+    ],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "DEV-003",
+    "review_notes": [
+      {
+        "note_code": "SAME_DAY_NO_UNCLAIMED_EXPENSE_INFERENCE",
+        "category": "itinerary",
+        "entity_ref": "transport_legs",
+        "facts": {
+          "same_day_round_trip": true,
+          "unique_documents_support_claim": false,
+          "unreadable_field": "none"
+        },
+        "evidence_refs": [
+          "transport_legs[0]",
+          "transport_legs[1]"
+        ],
+        "text": "The submitted transport legs form a same-day round trip between Changsha and Jinan. No hotel or allowance was claimed, which is valid and requires no unclaimed expense inference."
+      }
+    ],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "DEV-004",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "DEV-005",
+    "review_notes": [
+      {
+        "note_code": "DUPLICATE_ATTACHMENT_IGNORED",
+        "category": "duplicate_check",
+        "entity_ref": "transport_legs[0]",
+        "facts": {
+          "duplicate_attachment_count": 2,
+          "unique_documents_support_claim": true
+        },
+        "evidence_refs": [
+          "attachments[0]",
+          "attachments[4]"
+        ],
+        "text": "Rail ticket for leg 1 was uploaded twice as attachments[0] and attachments[4], but unique valid documents already support the claimed expense."
+      }
+    ],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "DEV-006",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "DEV-007",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "TRANSPORT_PASSENGER_MISMATCH",
+        "category": "transport",
+        "entity_ref": "transport_legs[0]",
+        "facts": {
+          "relationship": "ticket passenger differs from claimant",
+          "claim_employee": "Dev Employee 007",
+          "ticket_passenger": "Dev Employee 071"
+        },
+        "evidence_refs": [
+          "employee_name",
+          "transport_legs[0]",
+          "attachments[0]"
+        ],
+        "policy_clause": "Section 7 — Required Attachments",
+        "materiality": "material",
+        "explanation": "The passenger named in the transport ticket for the first leg is Dev Employee 071, which does not match the claimant name Dev Employee 007."
+      }
+    ],
+    "abstentions": []
+  },
+  {
+    "claim_id": "DEV-008",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "HOTEL_GUEST_MISMATCH",
+        "category": "accommodation",
+        "entity_ref": "hotel_stays[0]",
+        "facts": {
+          "relationship": "folio guest differs from claimant",
+          "claim_employee": "Dev Employee 008",
+          "folio_guest": "Dev Employee 081"
+        },
+        "evidence_refs": [
+          "employee_name",
+          "attachments[2]"
+        ],
+        "policy_clause": "Section 7 — Required Attachments",
+        "materiality": "material",
+        "explanation": "The guest named in the hotel folio (Dev Employee 081) does not match the claim employee name (Dev Employee 008)."
+      }
+    ],
+    "abstentions": []
+  },
+  {
+    "claim_id": "DEV-009",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "TRANSPORT_DATE_MISMATCH",
+        "category": "transport",
+        "entity_ref": "transport_legs[0]",
+        "facts": {
+          "relationship": "ticket travel date differs from claimed departure date",
+          "claimed_travel_date": "2026-09-02",
+          "ticket_travel_date": "2026-08-31"
+        },
+        "evidence_refs": [
+          "transport_legs[0]",
+          "attachments[0]"
+        ],
+        "policy_clause": null,
+        "materiality": "material",
+        "explanation": "The travel date on the rail ticket (2026-08-31) differs from the claimed departure date for the first leg (2026-09-02)."
+      }
+    ],
+    "abstentions": []
+  },
+  {
+    "claim_id": "DEV-012",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "MULTI_LEG_LOCATION_GAP",
+        "category": "itinerary",
+        "entity_ref": "transport_legs[1]",
+        "facts": {
+          "relationship": "previous arrival differs from next departure",
+          "connecting_document": "none"
+        },
+        "evidence_refs": [
+          "transport_legs[0]",
+          "transport_legs[1]"
+        ],
+        "policy_clause": "Section 6 — Multi-Leg Itinerary Consistency",
+        "materiality": "material",
+        "explanation": "Leg 1 arrives in Kunming, but Leg 2 departs from Jinan without a visible connecting transport document or explanation."
+      }
+    ],
+    "abstentions": [
+      {
+        "task_code": "BUSINESS_PURPOSE_CONCLUSION",
+        "entity_ref": "transport_legs[1]",
+        "reason": "The intermediate location change from Kunming to Jinan lacks schedule or business justification evidence to confirm the business purpose of the second segment.",
+        "missing_evidence_refs": [
+          "special_notes",
+          "employee_note"
+        ]
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-013",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "INVOICE_SERVICE_MISMATCH",
+        "category": "expense",
+        "entity_ref": "other_expenses[0]",
+        "facts": {
+          "claimed_service": "printing",
+          "invoice_service": "restaurant dining"
+        },
+        "evidence_refs": [
+          "other_expenses[0].description",
+          "attachments[4].ocr_description"
+        ],
+        "policy_clause": null,
+        "materiality": "material",
+        "explanation": "The claimed service is project drawing printing, but the attached VAT invoice describes restaurant dining, creating a material service mismatch."
+      }
+    ],
+    "abstentions": []
+  },
+  {
+    "claim_id": "DEV-014",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "DEV-021",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "TRANSPORT_DOCUMENT_QUALITY_REVIEW",
+        "category": "transport",
+        "entity_ref": "transport_legs[0]",
+        "facts": {
+          "unreadable_field": "passenger name",
+          "cause": "damaged scan"
+        },
+        "evidence_refs": [
+          "attachments[0]"
+        ],
+        "policy_clause": "Section 7 — Required Attachments",
+        "materiality": "material",
+        "explanation": "The railway ticket passenger name is unreadable due to a damaged scan, preventing verification."
+      }
+    ],
+    "abstentions": [
+      {
+        "task_code": "PASSENGER_IDENTITY_CHECK",
+        "entity_ref": "transport_legs[0]",
+        "reason": "The passenger name field in the transport document is unreadable, making it impossible to verify whether the named passenger matches the claimant.",
+        "missing_evidence_refs": [
+          "attachments[0]"
+        ]
+      }
+    ]
+  }
+]

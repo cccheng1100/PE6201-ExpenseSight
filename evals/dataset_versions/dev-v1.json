@@ -1,0 +1,30 @@
+{
+  "dataset_name": "dev",
+  "dataset_version": "dev-v1",
+  "status": "development_editable",
+  "claim_count": 22,
+  "label_distribution": {
+    "clean_pass": 6,
+    "warning_review": 10,
+    "return_required": 6
+  },
+  "components": {
+    "claims": {
+      "path": "data/dev/dev_claims.json",
+      "sha256": "2f3b0c0b744139fbc493d309acdcbc218773607d6c419fba1c937a6ed58f22c6"
+    },
+    "ground_truth": {
+      "path": "evals/dev_ground_truth.json",
+      "sha256": "2ba56a0c7e58f3661ed4a74f703c283c8be9894f5f7a9b1b9f70d84d28adaedb"
+    },
+    "case_manifest": {
+      "path": "data/dev/dev_case_manifest.json",
+      "sha256": "c14b6e010a23a5e0d4ec2ad8beafd97b5862398906bbafbfaedda7c3bc8e00f6"
+    },
+    "policy": {
+      "path": "data/policies/travel_policy.md",
+      "sha256": "28801d516f7c5081f40a544db8a214afa8af79712c32551fae5a6cbb26926e74"
+    }
+  },
+  "freeze_rule": "Any component change requires a new dataset version before comparison."
+}

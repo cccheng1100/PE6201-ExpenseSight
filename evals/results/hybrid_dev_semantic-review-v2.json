@@ -1,0 +1,320 @@
+{
+  "dataset_version": "dev-v1",
+  "dataset_name": "dev",
+  "dataset_status": "development_editable",
+  "dataset_component_hashes": {
+    "claims": "2f3b0c0b744139fbc493d309acdcbc218773607d6c419fba1c937a6ed58f22c6",
+    "ground_truth": "2ba56a0c7e58f3661ed4a74f703c283c8be9894f5f7a9b1b9f70d84d28adaedb",
+    "case_manifest": "c14b6e010a23a5e0d4ec2ad8beafd97b5862398906bbafbfaedda7c3bc8e00f6",
+    "policy": "28801d516f7c5081f40a544db8a214afa8af79712c32551fae5a6cbb26926e74"
+  },
+  "configuration": "hybrid",
+  "claim_count": 22,
+  "metric_definitions": {
+    "false_return_rate": "Share of claims that should proceed to human review but were incorrectly returned.",
+    "return_precision": "Share of predicted returns that were expected returns.",
+    "return_recall": "Share of expected return cases correctly returned.",
+    "return_reason_recall": "Share of expected deterministic return reasons recovered.",
+    "warning_recall": "Share of expected warning issues detected, matched by claim, code, and entity.",
+    "warning_precision": "Share of predicted warning issues that match an expected issue.",
+    "warning_fact_recall_diagnostic": "Share of expected warnings whose annotated material facts are all present and equal.",
+    "unsupported_warning_rate": "Share of predicted warnings with no matching expected issue.",
+    "clean_case_warning_rate": "Share of clean non-return cases that received at least one warning.",
+    "review_note_recall_diagnostic": "Share of expected neutral review notes recovered.",
+    "material_issue_recall": "Share of expected return reasons and warnings recovered together.",
+    "evidence_reference_validity": "Share of cited evidence paths that point to model-visible claim data or prior-claim context.",
+    "appropriate_abstention": "Share of annotated task-specific abstentions produced when required evidence is insufficient."
+  },
+  "model_review_eligible_claims": 16,
+  "model_review_short_circuited_claims": 6,
+  "metrics": {
+    "false_return_rate": 0.0,
+    "return_precision": 1.0,
+    "return_recall": 1.0,
+    "return_reason_recall": 1.0,
+    "warning_recall": 1.0,
+    "warning_precision": 0.9166666666666666,
+    "warning_fact_recall_diagnostic": 0.36363636363636365,
+    "unsupported_warning_rate": 0.08333333333333333,
+    "clean_case_warning_rate": 0.0,
+    "review_note_recall_diagnostic": 1.0,
+    "material_issue_recall": 1.0,
+    "evidence_reference_validity": 1.0,
+    "appropriate_abstention": 1.0
+  },
+  "counts": {
+    "claims": 22,
+    "clean_cases": 6,
+    "expected_returns": 6,
+    "predicted_returns": 6,
+    "false_returns": 0,
+    "expected_return_reasons": 6,
+    "matched_return_reasons": 6,
+    "expected_warnings": 11,
+    "matched_warnings": 11,
+    "fact_complete_warnings": 4,
+    "unsupported_warnings": 1,
+    "expected_review_notes": 3,
+    "matched_review_notes": 3,
+    "evidence_references": 56,
+    "valid_evidence_references": 56,
+    "abstentions": 4,
+    "expected_abstentions": 3
+  },
+  "cases": [
+    {
+      "claim_id": "DEV-001",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "DEV-002",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [
+        "OUTBOUND_ONLY_CLAIMED"
+      ],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "DEV-003",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "DEV-004",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [
+        "INVOICE_ISSUED_DURING_STAY"
+      ],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "DEV-005",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [
+        "DUPLICATE_ATTACHMENT_IGNORED",
+        "DUPLICATE_ATTACHMENT_IGNORED"
+      ],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "DEV-006",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "DEV-007",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "TRANSPORT_PASSENGER_MISMATCH"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "DEV-008",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "HOTEL_GUEST_MISMATCH"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "DEV-009",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "TRANSPORT_DATE_MISMATCH"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "DEV-010",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "ITINERARY_CHRONOLOGY_CONFLICT"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "DEV-011",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "POSSIBLE_NON_BUSINESS_TRIP",
+        "HOTEL_LOCATION_REVIEW"
+      ],
+      "predicted_abstentions": [
+        "BUSINESS_PURPOSE_CONCLUSION",
+        "ROUTE_DISTANCE_CHECK"
+      ]
+    },
+    {
+      "claim_id": "DEV-012",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "MULTI_LEG_LOCATION_GAP"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "DEV-013",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "OTHER_EXPENSE_REVIEW",
+        "INVOICE_SERVICE_MISMATCH"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "DEV-014",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "APPROVAL_SCOPE_MISMATCH"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "DEV-015",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "AMOUNT_ARITHMETIC_MISMATCH"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "DEV-016",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "HOTEL_OVER_CAP_NOT_DEDUCTED"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "DEV-017",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "ALLOWANCE_ARITHMETIC_MISMATCH"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "DEV-018",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "INVALID_NEGATIVE_AMOUNT",
+        "DEDUCTION_EXCEEDS_AMOUNT"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "DEV-019",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "HOTEL_NIGHTS_MISMATCH"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "DEV-020",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "TRANSPORT_DATE_ORDER_INVALID"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "DEV-021",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "TRANSPORT_DOCUMENT_QUALITY_REVIEW"
+      ],
+      "predicted_abstentions": [
+        "PASSENGER_IDENTITY_CHECK"
+      ]
+    },
+    {
+      "claim_id": "DEV-022",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "HOTEL_LOCATION_REVIEW"
+      ],
+      "predicted_abstentions": [
+        "ROUTE_DISTANCE_CHECK"
+      ]
+    }
+  ],
+  "limitations": [
+    "The candidate ground truth has not been frozen or independently reviewed.",
+    "The rules-only baseline is not expected to recover semantic or route warnings.",
+    "Warning issue matching uses code plus entity; fact completeness is reported separately.",
+    "Appropriate abstention is unavailable until expected abstentions are annotated.",
+    "Candidate metrics must not be reported as final project results."
+  ]
+}

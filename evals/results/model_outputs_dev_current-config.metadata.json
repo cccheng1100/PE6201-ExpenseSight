@@ -1,0 +1,227 @@
+{
+  "created_at_utc": "2026-10-03T06:17:55.002433+00:00",
+  "dataset": "dev",
+  "requested_model": "google/gemini-3.5-flash-lite",
+  "configuration": {
+    "pipeline_contract": "model-output-pipeline-v2",
+    "model": "google/gemini-3.5-flash-lite",
+    "system_prompt_sha256": "f14d1f53861fa645bd66b35f678d520ab774504f411c1bc32d7e1b94ee9f2876",
+    "request_template_sha256": "7751c823fbfcae61e79e7794929b873aaf7acf120d986717023bea4168ad2a69",
+    "policy_context_sha256": "b8487dd89871cd83184517d805f6a373a34750c1f578cdb28d48b9036ef0938e",
+    "warning_taxonomy_sha256": "243db9703e1958ef1f46e9c2b8cbcf6e745e04a36ea0fba2100af0faf0c7fad5",
+    "output_schema_sha256": "05c63fa7cec04e42e4a649ed558616ed5f393126b2f2ae802659c99ccfb0e9be"
+  },
+  "configuration_sha256": "1d9b2067c60531115ae95c4678002bb6e88dc17be92abbda5a474c50cc92045d",
+  "validated_output_count": 16,
+  "call_count": 16,
+  "calls": [
+    {
+      "claim_id": "DEV-010",
+      "model": "google/gemini-3.5-flash-lite",
+      "response_id": "gen-1791008162-DiTg1tm5RztGwgQaaaTI",
+      "usage": {
+        "prompt_tokens": 12601,
+        "completion_tokens": 248,
+        "total_tokens": 12849
+      },
+      "configuration_sha256": "1d9b2067c60531115ae95c4678002bb6e88dc17be92abbda5a474c50cc92045d",
+      "input_sha256": "f8a07f0030abb65628a7b308c003ccfcc41f385dc79ea98005c882c97cbc409a",
+      "status": "validated"
+    },
+    {
+      "claim_id": "DEV-011",
+      "model": "google/gemini-3.5-flash-lite",
+      "response_id": "gen-1791008164-1tQEJeVqnkLaXdILT2VF",
+      "usage": {
+        "prompt_tokens": 12593,
+        "completion_tokens": 314,
+        "total_tokens": 12907
+      },
+      "configuration_sha256": "1d9b2067c60531115ae95c4678002bb6e88dc17be92abbda5a474c50cc92045d",
+      "input_sha256": "0164f6df12bcbacd8fbb4f957e63e1bbdaf8e70a80a845fcfeda0565a4833083",
+      "status": "validated"
+    },
+    {
+      "claim_id": "DEV-022",
+      "model": "google/gemini-3.5-flash-lite",
+      "response_id": "gen-1791008168-SZA47dhmVSJ8qRRJjlon",
+      "usage": {
+        "prompt_tokens": 12370,
+        "completion_tokens": 301,
+        "total_tokens": 12671
+      },
+      "configuration_sha256": "1d9b2067c60531115ae95c4678002bb6e88dc17be92abbda5a474c50cc92045d",
+      "input_sha256": "1efb3da85177568b6121f3aca19dda58346fe75c35a8b0f357c3ea351acd33b4",
+      "status": "validated"
+    },
+    {
+      "claim_id": "DEV-001",
+      "model": "google/gemini-3.5-flash-lite",
+      "response_id": "gen-1791008244-tcMiFNIHlgCZ7c9jK9n2",
+      "usage": {
+        "prompt_tokens": 12341,
+        "completion_tokens": 38,
+        "total_tokens": 12379
+      },
+      "configuration_sha256": "1d9b2067c60531115ae95c4678002bb6e88dc17be92abbda5a474c50cc92045d",
+      "input_sha256": "a94d4209a0f381f696d2ce6d665ac28fdee23cbf98dccc4677368584b638e5e8",
+      "status": "validated"
+    },
+    {
+      "claim_id": "DEV-002",
+      "model": "google/gemini-3.5-flash-lite",
+      "response_id": "gen-1791008246-ecQCyC1yiO2HcSJeSiyC",
+      "usage": {
+        "prompt_tokens": 12082,
+        "completion_tokens": 166,
+        "total_tokens": 12248
+      },
+      "configuration_sha256": "1d9b2067c60531115ae95c4678002bb6e88dc17be92abbda5a474c50cc92045d",
+      "input_sha256": "06c695ff4632c747ee519f769ca42523fcbdd7df7f9527328aad076366eedde4",
+      "status": "validated"
+    },
+    {
+      "claim_id": "DEV-003",
+      "model": "google/gemini-3.5-flash-lite",
+      "response_id": "gen-1791008249-jgZGNK8yKaYrXeePX620",
+      "usage": {
+        "prompt_tokens": 11983,
+        "completion_tokens": 210,
+        "total_tokens": 12193
+      },
+      "configuration_sha256": "1d9b2067c60531115ae95c4678002bb6e88dc17be92abbda5a474c50cc92045d",
+      "input_sha256": "3322c63e0ab2fb68e13584a25766ff60c88f2aa771f92c9c11c40d75fad99eaa",
+      "status": "validated"
+    },
+    {
+      "claim_id": "DEV-004",
+      "model": "google/gemini-3.5-flash-lite",
+      "response_id": "gen-1791008251-g8RO6uhc4mA5BxVVrJnT",
+      "usage": {
+        "prompt_tokens": 12369,
+        "completion_tokens": 38,
+        "total_tokens": 12407
+      },
+      "configuration_sha256": "1d9b2067c60531115ae95c4678002bb6e88dc17be92abbda5a474c50cc92045d",
+      "input_sha256": "a5b50cf4cadf14f533779c47748f7ee3d289702677c87173354bed8da20bcc75",
+      "status": "validated"
+    },
+    {
+      "claim_id": "DEV-005",
+      "model": "google/gemini-3.5-flash-lite",
+      "response_id": "gen-1791008253-yAmCDKuXjAAfXRkVT2bn",
+      "usage": {
+        "prompt_tokens": 12632,
+        "completion_tokens": 182,
+        "total_tokens": 12814
+      },
+      "configuration_sha256": "1d9b2067c60531115ae95c4678002bb6e88dc17be92abbda5a474c50cc92045d",
+      "input_sha256": "7ab6a188c3793dfe1e849928a013ad5fa02a367297b674d8bf5cc11c45dec4d0",
+      "status": "validated"
+    },
+    {
+      "claim_id": "DEV-006",
+      "model": "google/gemini-3.5-flash-lite",
+      "response_id": "gen-1791008256-UnqhxqvjVNVioakewzka",
+      "usage": {
+        "prompt_tokens": 12917,
+        "completion_tokens": 38,
+        "total_tokens": 12955
+      },
+      "configuration_sha256": "1d9b2067c60531115ae95c4678002bb6e88dc17be92abbda5a474c50cc92045d",
+      "input_sha256": "2117044f2034047d0bec87f0e9e820a88c1aa2c0debd0dadb7167b8745d2ab56",
+      "status": "validated"
+    },
+    {
+      "claim_id": "DEV-007",
+      "model": "google/gemini-3.5-flash-lite",
+      "response_id": "gen-1791008258-f3DSXYUPyBnh2YarTJ8Y",
+      "usage": {
+        "prompt_tokens": 12339,
+        "completion_tokens": 235,
+        "total_tokens": 12574
+      },
+      "configuration_sha256": "1d9b2067c60531115ae95c4678002bb6e88dc17be92abbda5a474c50cc92045d",
+      "input_sha256": "5b038439f9b1112ddd86c855af44647824e77ce65ac99a92747adf8a8f2c8567",
+      "status": "validated"
+    },
+    {
+      "claim_id": "DEV-008",
+      "model": "google/gemini-3.5-flash-lite",
+      "response_id": "gen-1791008260-VIZnhdTpL4lsmj4fAi0i",
+      "usage": {
+        "prompt_tokens": 12341,
+        "completion_tokens": 223,
+        "total_tokens": 12564
+      },
+      "configuration_sha256": "1d9b2067c60531115ae95c4678002bb6e88dc17be92abbda5a474c50cc92045d",
+      "input_sha256": "42240607a8f7912106e48250a1e2efb25fdb1634946bb3e0e96092f745d0effa",
+      "status": "validated"
+    },
+    {
+      "claim_id": "DEV-009",
+      "model": "google/gemini-3.5-flash-lite",
+      "response_id": "gen-1791008263-dWe1RyysgP3NsieIDvgr",
+      "usage": {
+        "prompt_tokens": 12341,
+        "completion_tokens": 242,
+        "total_tokens": 12583
+      },
+      "configuration_sha256": "1d9b2067c60531115ae95c4678002bb6e88dc17be92abbda5a474c50cc92045d",
+      "input_sha256": "f890a626c0865b4e076fc895993babf58eb5039a8322ed8b313794be0af86e68",
+      "status": "validated"
+    },
+    {
+      "claim_id": "DEV-012",
+      "model": "google/gemini-3.5-flash-lite",
+      "response_id": "gen-1791008265-xVOMyUv6cbjWr4eRaZL4",
+      "usage": {
+        "prompt_tokens": 12920,
+        "completion_tokens": 303,
+        "total_tokens": 13223
+      },
+      "configuration_sha256": "1d9b2067c60531115ae95c4678002bb6e88dc17be92abbda5a474c50cc92045d",
+      "input_sha256": "d4752a0fa4285db5bf2cf6a5a17fc10a26f8ff24b2f8b0be5d2bccc589d815cf",
+      "status": "validated"
+    },
+    {
+      "claim_id": "DEV-013",
+      "model": "google/gemini-3.5-flash-lite",
+      "response_id": "gen-1791008268-vWMfBhVrvZtmQ0wnmt6N",
+      "usage": {
+        "prompt_tokens": 12653,
+        "completion_tokens": 196,
+        "total_tokens": 12849
+      },
+      "configuration_sha256": "1d9b2067c60531115ae95c4678002bb6e88dc17be92abbda5a474c50cc92045d",
+      "input_sha256": "3a894302c057e1411b40eed2f005e2e614e9aca6a3a0cc0c412b1199589c3497",
+      "status": "validated"
+    },
+    {
+      "claim_id": "DEV-014",
+      "model": "google/gemini-3.5-flash-lite",
+      "response_id": "gen-1791008270-lp7TVCE7luC4I5QK336h",
+      "usage": {
+        "prompt_tokens": 13081,
+        "completion_tokens": 38,
+        "total_tokens": 13119
+      },
+      "configuration_sha256": "1d9b2067c60531115ae95c4678002bb6e88dc17be92abbda5a474c50cc92045d",
+      "input_sha256": "58b4652916daabd6098def683d0ee17386738c8be2dd53e48162bfeee88e3871",
+      "status": "validated"
+    },
+    {
+      "claim_id": "DEV-021",
+      "model": "google/gemini-3.5-flash-lite",
+      "response_id": "gen-1791008272-81UUJmm30BKutvSLL350",
+      "usage": {
+        "prompt_tokens": 12338,
+        "completion_tokens": 271,
+        "total_tokens": 12609
+      },
+      "configuration_sha256": "1d9b2067c60531115ae95c4678002bb6e88dc17be92abbda5a474c50cc92045d",
+      "input_sha256": "396a2fa39e15989f12437e1c658dc39c88acbbe172539394400bbaefd85ff62a",
+      "status": "validated"
+    }
+  ]
+}

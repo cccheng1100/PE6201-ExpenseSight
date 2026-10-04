@@ -1,0 +1,30 @@
+{
+  "dataset_name": "candidate",
+  "dataset_version": "candidate-v1",
+  "status": "candidate_not_frozen",
+  "claim_count": 50,
+  "label_distribution": {
+    "clean_pass": 15,
+    "warning_review": 19,
+    "return_required": 16
+  },
+  "components": {
+    "claims": {
+      "path": "data/candidate_holdout_claims.json",
+      "sha256": "ba224c3a917c0ca65ab552b67d5d4764cd84a3cfefaf3e5ae44bc6a329fec62d"
+    },
+    "ground_truth": {
+      "path": "evals/candidate_holdout_ground_truth.json",
+      "sha256": "3e31b6da364604189f117ba04d846f2e9513965668acb26c19f68a64f544479f"
+    },
+    "case_manifest": {
+      "path": "data/candidate_case_manifest.json",
+      "sha256": "416494e2e5ba8bccea0ab38fbfa52dafb90fa99aea7946bdd1677a232f25dbf1"
+    },
+    "policy": {
+      "path": "data/policies/travel_policy.md",
+      "sha256": "28801d516f7c5081f40a544db8a214afa8af79712c32551fae5a6cbb26926e74"
+    }
+  },
+  "freeze_rule": "Any component change requires a new dataset version before comparison."
+}

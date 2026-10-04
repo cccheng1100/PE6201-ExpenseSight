@@ -1,0 +1,43 @@
+{
+  "configuration_version": "semantic-review-v1",
+  "status": "superseded_by_pre_holdout_business_review",
+  "superseded_reason": "Human business review refined the boundary between ordinary employee explanations and explicit attempts to manipulate automated review. The active prompt must receive a new configuration version and complete Dev revalidation before holdout evaluation.",
+  "frozen_on": "2026-10-03",
+  "model": "google/gemini-3.5-flash-lite",
+  "configuration_sha256": "1d9b2067c60531115ae95c4678002bb6e88dc17be92abbda5a474c50cc92045d",
+  "pipeline_contract": "model-output-pipeline-v2",
+  "component_hashes": {
+    "semantic_review_system": "f14d1f53861fa645bd66b35f678d520ab774504f411c1bc32d7e1b94ee9f2876",
+    "semantic_review_request": "7751c823fbfcae61e79e7794929b873aaf7acf120d986717023bea4168ad2a69",
+    "policy_context": "b8487dd89871cd83184517d805f6a373a34750c1f578cdb28d48b9036ef0938e",
+    "warning_taxonomy": "243db9703e1958ef1f46e9c2b8cbcf6e745e04a36ea0fba2100af0faf0c7fad5",
+    "output_schema": "05c63fa7cec04e42e4a649ed558616ed5f393126b2f2ae802659c99ccfb0e9be"
+  },
+  "dev_artifacts": {
+    "model_outputs": {
+      "path": "evals/results/model_outputs_dev_current-config.json",
+      "sha256": "4b62f4bfe040083962d993bea48ef824c90cb0470a0b66dd5b974f4de5869eaf"
+    },
+    "metadata": {
+      "path": "evals/results/model_outputs_dev_current-config.metadata.json",
+      "sha256": "459b6277306abff6374a06229d8b2b68d3324413c644a58903103269a30360dd"
+    },
+    "evaluation": {
+      "path": "evals/results/hybrid_dev_current_config.json",
+      "sha256": "3c3fc8b94600b4d45859cbf5e6132270e2d883ac2ca20966f34c7cbe8a8e1f50"
+    }
+  },
+  "dev_metrics": {
+    "false_return_rate": 0.0,
+    "warning_recall": 1.0,
+    "warning_precision": 1.0,
+    "warning_fact_recall_diagnostic": 0.45454545454545453,
+    "unsupported_warning_rate": 0.0,
+    "clean_case_warning_rate": 0.0,
+    "review_note_recall_diagnostic": 0.75,
+    "material_issue_recall": 1.0,
+    "evidence_reference_validity": 1.0,
+    "appropriate_abstention": 1.0
+  },
+  "freeze_rule": "Any change to the model, prompts, policy context, taxonomy, output schema, or pipeline contract requires a new configuration version and a complete Dev run before holdout evaluation."
+}

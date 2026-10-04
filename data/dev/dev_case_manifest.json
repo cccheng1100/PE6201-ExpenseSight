@@ -1,0 +1,178 @@
+[
+  {
+    "claim_id": "DEV-001",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-002",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-003",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-004",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-005",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-006",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-007",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-008",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-009",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-010",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-011",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-012",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-013",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-014",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-015",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-016",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-017",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-018",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-019",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-020",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "complex_multi_leg"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-021",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "development_editable"
+  },
+  {
+    "claim_id": "DEV-022",
+    "origin": "development_synthetic",
+    "case_tags": [
+      "simple_or_single_itinerary"
+    ],
+    "status": "development_editable"
+  }
+]

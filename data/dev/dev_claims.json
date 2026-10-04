@@ -1,0 +1,2393 @@
+[
+  {
+    "claim_id": "DEV-001",
+    "employee_id": "DEV-E001",
+    "employee_name": "Dev Employee 001",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-001-L1",
+        "transport": "rail",
+        "depart_city": "Hefei",
+        "arrive_city": "Chengdu",
+        "depart_date": "2026-01-04",
+        "arrive_date": "2026-01-04",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      },
+      {
+        "leg_id": "DEV-001-L2",
+        "transport": "rail",
+        "depart_city": "Chengdu",
+        "arrive_city": "Hefei",
+        "depart_date": "2026-01-06",
+        "arrive_date": "2026-01-06",
+        "cabin": "economy",
+        "amount_rmb": 300,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 300
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Chengdu",
+        "check_in": "2026-01-04",
+        "check_out": "2026-01-06",
+        "nights": 2,
+        "amount_rmb": 680.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 680.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-001",
+      "approved_on": "2025-12-30",
+      "valid_from": "2026-01-04",
+      "valid_to": "2026-01-06",
+      "destination_cities": [
+        "Chengdu"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-01-12",
+    "special_notes": "",
+    "employee_note": "Project visit to Chengdu.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-001-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 001, Hefei to Chengdu, travel date 2026-01-04, fare RMB 320, ticket no. TKT-DEV-001-1."
+      },
+      {
+        "attachment_id": "DEV-001-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 001, Chengdu to Hefei, travel date 2026-01-06, fare RMB 300, ticket no. TKT-DEV-001-2."
+      },
+      {
+        "attachment_id": "DEV-001-ATT-03",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 001, Chengdu Project Hotel, 2 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-001-ATT-04",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 680, invoice no. INV-DEV-001-H1."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-002",
+    "employee_id": "DEV-E002",
+    "employee_name": "Dev Employee 002",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-002-L1",
+        "transport": "rail",
+        "depart_city": "Wuhan",
+        "arrive_city": "Hangzhou",
+        "depart_date": "2026-02-06",
+        "arrive_date": "2026-02-06",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Hangzhou",
+        "check_in": "2026-02-06",
+        "check_out": "2026-02-08",
+        "nights": 2,
+        "amount_rmb": 680.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 680.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-002",
+      "approved_on": "2026-02-01",
+      "valid_from": "2026-02-06",
+      "valid_to": "2026-02-08",
+      "destination_cities": [
+        "Hangzhou"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-02-14",
+    "special_notes": "",
+    "employee_note": "Project visit to Hangzhou.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-002-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 002, Wuhan to Hangzhou, travel date 2026-02-06, fare RMB 320, ticket no. TKT-DEV-002-1."
+      },
+      {
+        "attachment_id": "DEV-002-ATT-02",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 002, Hangzhou Project Hotel, 2 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-002-ATT-03",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 680, invoice no. INV-DEV-002-H1."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-003",
+    "employee_id": "DEV-E003",
+    "employee_name": "Dev Employee 003",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-003-L1",
+        "transport": "rail",
+        "depart_city": "Changsha",
+        "arrive_city": "Jinan",
+        "depart_date": "2026-03-08",
+        "arrive_date": "2026-03-08",
+        "cabin": "economy",
+        "amount_rmb": 100,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 100
+      },
+      {
+        "leg_id": "DEV-003-L2",
+        "transport": "rail",
+        "depart_city": "Jinan",
+        "arrive_city": "Changsha",
+        "depart_date": "2026-03-08",
+        "arrive_date": "2026-03-08",
+        "cabin": "economy",
+        "amount_rmb": 100,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 100
+      }
+    ],
+    "hotel_stays": [],
+    "meal_allowance": null,
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-003",
+      "approved_on": "2026-03-03",
+      "valid_from": "2026-03-08",
+      "valid_to": "2026-03-08",
+      "destination_cities": [
+        "Jinan"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-03-16",
+    "special_notes": "",
+    "employee_note": "Project visit to Jinan.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-003-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 003, Changsha to Jinan, travel date 2026-03-08, fare RMB 100, ticket no. TKT-DEV-003-1."
+      },
+      {
+        "attachment_id": "DEV-003-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 003, Jinan to Changsha, travel date 2026-03-08, fare RMB 100, ticket no. TKT-DEV-003-2."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-004",
+    "employee_id": "DEV-E004",
+    "employee_name": "Dev Employee 004",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-004-L1",
+        "transport": "rail",
+        "depart_city": "Chengdu",
+        "arrive_city": "Kunming",
+        "depart_date": "2026-04-10",
+        "arrive_date": "2026-04-10",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      },
+      {
+        "leg_id": "DEV-004-L2",
+        "transport": "rail",
+        "depart_city": "Kunming",
+        "arrive_city": "Chengdu",
+        "depart_date": "2026-04-12",
+        "arrive_date": "2026-04-12",
+        "cabin": "economy",
+        "amount_rmb": 300,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 300
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Kunming",
+        "check_in": "2026-04-10",
+        "check_out": "2026-04-12",
+        "nights": 2,
+        "amount_rmb": 680.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 680.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-004",
+      "approved_on": "2026-04-05",
+      "valid_from": "2026-04-10",
+      "valid_to": "2026-04-12",
+      "destination_cities": [
+        "Kunming"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-04-18",
+    "special_notes": "",
+    "employee_note": "Project visit to Kunming.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-004-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 004, Chengdu to Kunming, travel date 2026-04-10, fare RMB 320, ticket no. TKT-DEV-004-1."
+      },
+      {
+        "attachment_id": "DEV-004-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 004, Kunming to Chengdu, travel date 2026-04-12, fare RMB 300, ticket no. TKT-DEV-004-2."
+      },
+      {
+        "attachment_id": "DEV-004-ATT-03",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 004, Kunming Project Hotel, 2 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-004-ATT-04",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, issue date 2026-04-11, checkout date 2026-04-12, amount RMB 680, invoice no. INV-DEV-004-H1."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-005",
+    "employee_id": "DEV-E005",
+    "employee_name": "Dev Employee 005",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-005-L1",
+        "transport": "rail",
+        "depart_city": "Hangzhou",
+        "arrive_city": "Nanjing",
+        "depart_date": "2026-05-12",
+        "arrive_date": "2026-05-12",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      },
+      {
+        "leg_id": "DEV-005-L2",
+        "transport": "rail",
+        "depart_city": "Nanjing",
+        "arrive_city": "Hangzhou",
+        "depart_date": "2026-05-14",
+        "arrive_date": "2026-05-14",
+        "cabin": "economy",
+        "amount_rmb": 300,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 300
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Nanjing",
+        "check_in": "2026-05-12",
+        "check_out": "2026-05-14",
+        "nights": 2,
+        "amount_rmb": 680.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 680.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-005",
+      "approved_on": "2026-05-07",
+      "valid_from": "2026-05-12",
+      "valid_to": "2026-05-14",
+      "destination_cities": [
+        "Nanjing"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-05-20",
+    "special_notes": "",
+    "employee_note": "Project visit to Nanjing.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-005-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 005, Hangzhou to Nanjing, travel date 2026-05-12, fare RMB 320, ticket no. TKT-DEV-005-1."
+      },
+      {
+        "attachment_id": "DEV-005-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 005, Nanjing to Hangzhou, travel date 2026-05-14, fare RMB 300, ticket no. TKT-DEV-005-2."
+      },
+      {
+        "attachment_id": "DEV-005-ATT-03",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 005, Nanjing Project Hotel, 2 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-005-ATT-04",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 680, invoice no. INV-DEV-005-H1."
+      },
+      {
+        "attachment_id": "DEV-005-ATT-05",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 005, Hangzhou to Nanjing, travel date 2026-05-12, fare RMB 320, ticket no. TKT-DEV-005-1."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-006",
+    "employee_id": "DEV-E006",
+    "employee_name": "Dev Employee 006",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-006-L1",
+        "transport": "rail",
+        "depart_city": "Jinan",
+        "arrive_city": "Hefei",
+        "depart_date": "2026-06-14",
+        "arrive_date": "2026-06-14",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      },
+      {
+        "leg_id": "DEV-006-L2",
+        "transport": "rail",
+        "depart_city": "Hefei",
+        "arrive_city": "Nanjing",
+        "depart_date": "2026-06-15",
+        "arrive_date": "2026-06-15",
+        "cabin": "economy",
+        "amount_rmb": 240,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 240
+      },
+      {
+        "leg_id": "DEV-006-L3",
+        "transport": "rail",
+        "depart_city": "Nanjing",
+        "arrive_city": "Jinan",
+        "depart_date": "2026-06-16",
+        "arrive_date": "2026-06-16",
+        "cabin": "economy",
+        "amount_rmb": 330,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 330
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Hefei",
+        "check_in": "2026-06-14",
+        "check_out": "2026-06-15",
+        "nights": 1,
+        "amount_rmb": 340.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 340.0
+      },
+      {
+        "city": "Nanjing",
+        "check_in": "2026-06-15",
+        "check_out": "2026-06-16",
+        "nights": 1,
+        "amount_rmb": 340.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 340.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-006",
+      "approved_on": "2026-06-09",
+      "valid_from": "2026-06-14",
+      "valid_to": "2026-06-16",
+      "destination_cities": [
+        "Hefei",
+        "Nanjing"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-06-22",
+    "special_notes": "",
+    "employee_note": "Project visit to Hefei.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-006-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 006, Jinan to Hefei, travel date 2026-06-14, fare RMB 320, ticket no. TKT-DEV-006-1."
+      },
+      {
+        "attachment_id": "DEV-006-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 006, Hefei to Nanjing, travel date 2026-06-15, fare RMB 240, ticket no. TKT-DEV-006-2."
+      },
+      {
+        "attachment_id": "DEV-006-ATT-03",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[2]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 006, Nanjing to Jinan, travel date 2026-06-16, fare RMB 330, ticket no. TKT-DEV-006-3."
+      },
+      {
+        "attachment_id": "DEV-006-ATT-04",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 006, Hefei Project Hotel, 1 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-006-ATT-05",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 340, invoice no. INV-DEV-006-H1."
+      },
+      {
+        "attachment_id": "DEV-006-ATT-06",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[1]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 006, Nanjing Project Hotel, 1 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-006-ATT-07",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[1]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 340, invoice no. INV-DEV-006-H2."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-007",
+    "employee_id": "DEV-E007",
+    "employee_name": "Dev Employee 007",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-007-L1",
+        "transport": "rail",
+        "depart_city": "Kunming",
+        "arrive_city": "Wuhan",
+        "depart_date": "2026-07-16",
+        "arrive_date": "2026-07-16",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      },
+      {
+        "leg_id": "DEV-007-L2",
+        "transport": "rail",
+        "depart_city": "Wuhan",
+        "arrive_city": "Kunming",
+        "depart_date": "2026-07-18",
+        "arrive_date": "2026-07-18",
+        "cabin": "economy",
+        "amount_rmb": 300,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 300
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Wuhan",
+        "check_in": "2026-07-16",
+        "check_out": "2026-07-18",
+        "nights": 2,
+        "amount_rmb": 680.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 680.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-007",
+      "approved_on": "2026-07-11",
+      "valid_from": "2026-07-16",
+      "valid_to": "2026-07-18",
+      "destination_cities": [
+        "Wuhan"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-07-24",
+    "special_notes": "",
+    "employee_note": "Project visit to Wuhan.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-007-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 071, Kunming to Wuhan, travel date 2026-07-16, fare RMB 320, ticket no. TKT-DEV-007-1."
+      },
+      {
+        "attachment_id": "DEV-007-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 007, Wuhan to Kunming, travel date 2026-07-18, fare RMB 300, ticket no. TKT-DEV-007-2."
+      },
+      {
+        "attachment_id": "DEV-007-ATT-03",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 007, Wuhan Project Hotel, 2 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-007-ATT-04",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 680, invoice no. INV-DEV-007-H1."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-008",
+    "employee_id": "DEV-E008",
+    "employee_name": "Dev Employee 008",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-008-L1",
+        "transport": "rail",
+        "depart_city": "Nanjing",
+        "arrive_city": "Changsha",
+        "depart_date": "2026-08-18",
+        "arrive_date": "2026-08-18",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      },
+      {
+        "leg_id": "DEV-008-L2",
+        "transport": "rail",
+        "depart_city": "Changsha",
+        "arrive_city": "Nanjing",
+        "depart_date": "2026-08-20",
+        "arrive_date": "2026-08-20",
+        "cabin": "economy",
+        "amount_rmb": 300,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 300
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Changsha",
+        "check_in": "2026-08-18",
+        "check_out": "2026-08-20",
+        "nights": 2,
+        "amount_rmb": 680.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 680.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-008",
+      "approved_on": "2026-08-13",
+      "valid_from": "2026-08-18",
+      "valid_to": "2026-08-20",
+      "destination_cities": [
+        "Changsha"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-08-26",
+    "special_notes": "",
+    "employee_note": "Project visit to Changsha.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-008-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 008, Nanjing to Changsha, travel date 2026-08-18, fare RMB 320, ticket no. TKT-DEV-008-1."
+      },
+      {
+        "attachment_id": "DEV-008-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 008, Changsha to Nanjing, travel date 2026-08-20, fare RMB 300, ticket no. TKT-DEV-008-2."
+      },
+      {
+        "attachment_id": "DEV-008-ATT-03",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 081, Changsha Project Hotel, 2 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-008-ATT-04",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 680, invoice no. INV-DEV-008-H1."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-009",
+    "employee_id": "DEV-E009",
+    "employee_name": "Dev Employee 009",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-009-L1",
+        "transport": "rail",
+        "depart_city": "Hefei",
+        "arrive_city": "Chengdu",
+        "depart_date": "2026-09-02",
+        "arrive_date": "2026-09-02",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      },
+      {
+        "leg_id": "DEV-009-L2",
+        "transport": "rail",
+        "depart_city": "Chengdu",
+        "arrive_city": "Hefei",
+        "depart_date": "2026-09-04",
+        "arrive_date": "2026-09-04",
+        "cabin": "economy",
+        "amount_rmb": 300,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 300
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Chengdu",
+        "check_in": "2026-09-02",
+        "check_out": "2026-09-04",
+        "nights": 2,
+        "amount_rmb": 680.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 680.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-009",
+      "approved_on": "2026-08-28",
+      "valid_from": "2026-09-02",
+      "valid_to": "2026-09-04",
+      "destination_cities": [
+        "Chengdu"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-09-10",
+    "special_notes": "",
+    "employee_note": "Project visit to Chengdu.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-009-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 009, Hefei to Chengdu, travel date 2026-08-31, fare RMB 320, ticket no. TKT-DEV-009-1."
+      },
+      {
+        "attachment_id": "DEV-009-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 009, Chengdu to Hefei, travel date 2026-09-04, fare RMB 300, ticket no. TKT-DEV-009-2."
+      },
+      {
+        "attachment_id": "DEV-009-ATT-03",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 009, Chengdu Project Hotel, 2 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-009-ATT-04",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 680, invoice no. INV-DEV-009-H1."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-010",
+    "employee_id": "DEV-E010",
+    "employee_name": "Dev Employee 010",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-010-L1",
+        "transport": "rail",
+        "depart_city": "Wuhan",
+        "arrive_city": "Hangzhou",
+        "depart_date": "2026-01-04",
+        "arrive_date": "2026-01-04",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      },
+      {
+        "leg_id": "DEV-010-L2",
+        "transport": "rail",
+        "depart_city": "Hangzhou",
+        "arrive_city": "Nanjing",
+        "depart_date": "2026-01-05",
+        "arrive_date": "2026-01-05",
+        "cabin": "economy",
+        "amount_rmb": 240,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 240
+      },
+      {
+        "leg_id": "DEV-010-L3",
+        "transport": "rail",
+        "depart_city": "Nanjing",
+        "arrive_city": "Wuhan",
+        "depart_date": "2026-01-06",
+        "arrive_date": "2026-01-06",
+        "cabin": "economy",
+        "amount_rmb": 330,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 330
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Hangzhou",
+        "check_in": "2026-01-03",
+        "check_out": "2026-01-06",
+        "nights": 3,
+        "amount_rmb": 1020.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 1020.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-010",
+      "approved_on": "2025-12-29",
+      "valid_from": "2026-01-03",
+      "valid_to": "2026-01-06",
+      "destination_cities": [
+        "Hangzhou",
+        "Nanjing"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-01-12",
+    "special_notes": "",
+    "employee_note": "Project visit to Hangzhou.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-010-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 010, Wuhan to Hangzhou, travel date 2026-01-04, fare RMB 320, ticket no. TKT-DEV-010-1."
+      },
+      {
+        "attachment_id": "DEV-010-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 010, Hangzhou to Nanjing, travel date 2026-01-05, fare RMB 240, ticket no. TKT-DEV-010-2."
+      },
+      {
+        "attachment_id": "DEV-010-ATT-03",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[2]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 010, Nanjing to Wuhan, travel date 2026-01-06, fare RMB 330, ticket no. TKT-DEV-010-3."
+      },
+      {
+        "attachment_id": "DEV-010-ATT-04",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 010, Hangzhou Project Hotel, 3 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-010-ATT-05",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 1020, invoice no. INV-DEV-010-H1."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-011",
+    "employee_id": "DEV-E011",
+    "employee_name": "Dev Employee 011",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-011-L1",
+        "transport": "rail",
+        "depart_city": "Changsha",
+        "arrive_city": "Jinan",
+        "depart_date": "2026-02-06",
+        "arrive_date": "2026-02-06",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      },
+      {
+        "leg_id": "DEV-011-L2",
+        "transport": "rail",
+        "depart_city": "Jinan",
+        "arrive_city": "Changsha",
+        "depart_date": "2026-02-08",
+        "arrive_date": "2026-02-08",
+        "cabin": "economy",
+        "amount_rmb": 300,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 300
+      },
+      {
+        "leg_id": "DEV-011-L3",
+        "transport": "rideshare",
+        "depart_city": "Jinan Riverside Restaurant",
+        "arrive_city": "Jinan Central Mall",
+        "depart_date": "2026-02-07",
+        "arrive_date": "2026-02-07",
+        "cabin": null,
+        "amount_rmb": 72,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 72
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Jinan",
+        "check_in": "2026-02-06",
+        "check_out": "2026-02-08",
+        "nights": 2,
+        "amount_rmb": 680.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 680.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-011",
+      "approved_on": "2026-02-01",
+      "valid_from": "2026-02-06",
+      "valid_to": "2026-02-08",
+      "destination_cities": [
+        "Jinan"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-02-14",
+    "special_notes": "",
+    "employee_note": "Meetings at Jinan Q Company; no meeting schedule is attached.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-011-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 011, Changsha to Jinan, travel date 2026-02-06, fare RMB 320, ticket no. TKT-DEV-011-1."
+      },
+      {
+        "attachment_id": "DEV-011-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 011, Jinan to Changsha, travel date 2026-02-08, fare RMB 300, ticket no. TKT-DEV-011-2."
+      },
+      {
+        "attachment_id": "DEV-011-ATT-03",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[2]"
+        ],
+        "ocr_description": "Rideshare receipt from Jinan Riverside Restaurant to Jinan Central Mall, fare RMB 72, ticket no. TKT-DEV-011-3."
+      },
+      {
+        "attachment_id": "DEV-011-ATT-04",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 011, Jinan Project Hotel, 2 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-011-ATT-05",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 680, invoice no. INV-DEV-011-H1."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-012",
+    "employee_id": "DEV-E012",
+    "employee_name": "Dev Employee 012",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-012-L1",
+        "transport": "rail",
+        "depart_city": "Chengdu",
+        "arrive_city": "Kunming",
+        "depart_date": "2026-03-08",
+        "arrive_date": "2026-03-08",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      },
+      {
+        "leg_id": "DEV-012-L2",
+        "transport": "rail",
+        "depart_city": "Jinan",
+        "arrive_city": "Nanjing",
+        "depart_date": "2026-03-09",
+        "arrive_date": "2026-03-09",
+        "cabin": "economy",
+        "amount_rmb": 240,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 240
+      },
+      {
+        "leg_id": "DEV-012-L3",
+        "transport": "rail",
+        "depart_city": "Nanjing",
+        "arrive_city": "Chengdu",
+        "depart_date": "2026-03-10",
+        "arrive_date": "2026-03-10",
+        "cabin": "economy",
+        "amount_rmb": 330,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 330
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Kunming",
+        "check_in": "2026-03-08",
+        "check_out": "2026-03-09",
+        "nights": 1,
+        "amount_rmb": 340.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 340.0
+      },
+      {
+        "city": "Nanjing",
+        "check_in": "2026-03-09",
+        "check_out": "2026-03-10",
+        "nights": 1,
+        "amount_rmb": 340.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 340.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-012",
+      "approved_on": "2026-03-03",
+      "valid_from": "2026-03-08",
+      "valid_to": "2026-03-10",
+      "destination_cities": [
+        "Kunming",
+        "Nanjing"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-03-16",
+    "special_notes": "No connecting local-transport document is attached.",
+    "employee_note": "Project visit to Kunming.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-012-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 012, Chengdu to Kunming, travel date 2026-03-08, fare RMB 320, ticket no. TKT-DEV-012-1."
+      },
+      {
+        "attachment_id": "DEV-012-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 012, Jinan to Nanjing, travel date 2026-03-09, fare RMB 240, ticket no. TKT-DEV-012-2."
+      },
+      {
+        "attachment_id": "DEV-012-ATT-03",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[2]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 012, Nanjing to Chengdu, travel date 2026-03-10, fare RMB 330, ticket no. TKT-DEV-012-3."
+      },
+      {
+        "attachment_id": "DEV-012-ATT-04",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 012, Kunming Project Hotel, 1 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-012-ATT-05",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 340, invoice no. INV-DEV-012-H1."
+      },
+      {
+        "attachment_id": "DEV-012-ATT-06",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[1]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 012, Nanjing Project Hotel, 1 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-012-ATT-07",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[1]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 340, invoice no. INV-DEV-012-H2."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-013",
+    "employee_id": "DEV-E013",
+    "employee_name": "Dev Employee 013",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-013-L1",
+        "transport": "rail",
+        "depart_city": "Hangzhou",
+        "arrive_city": "Nanjing",
+        "depart_date": "2026-04-10",
+        "arrive_date": "2026-04-10",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      },
+      {
+        "leg_id": "DEV-013-L2",
+        "transport": "rail",
+        "depart_city": "Nanjing",
+        "arrive_city": "Hangzhou",
+        "depart_date": "2026-04-12",
+        "arrive_date": "2026-04-12",
+        "cabin": "economy",
+        "amount_rmb": 300,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 300
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Nanjing",
+        "check_in": "2026-04-10",
+        "check_out": "2026-04-12",
+        "nights": 2,
+        "amount_rmb": 680.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 680.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [
+      {
+        "category": "printing",
+        "description": "Project drawing printing",
+        "amount_rmb": 280,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 280
+      }
+    ],
+    "pre_approval": {
+      "approval_id": "PA-DEV-013",
+      "approved_on": "2026-04-05",
+      "valid_from": "2026-04-10",
+      "valid_to": "2026-04-12",
+      "destination_cities": [
+        "Nanjing"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-04-18",
+    "special_notes": "",
+    "employee_note": "Project visit to Nanjing.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-013-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 013, Hangzhou to Nanjing, travel date 2026-04-10, fare RMB 320, ticket no. TKT-DEV-013-1."
+      },
+      {
+        "attachment_id": "DEV-013-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 013, Nanjing to Hangzhou, travel date 2026-04-12, fare RMB 300, ticket no. TKT-DEV-013-2."
+      },
+      {
+        "attachment_id": "DEV-013-ATT-03",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 013, Nanjing Project Hotel, 2 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-013-ATT-04",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 680, invoice no. INV-DEV-013-H1."
+      },
+      {
+        "attachment_id": "DEV-013-ATT-05",
+        "document_type": "other_invoice",
+        "linked_expense_refs": [
+          "other_expenses[0]"
+        ],
+        "ocr_description": "VAT invoice for restaurant dining, amount RMB 280, invoice no. INV-DEV-013-O1."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-014",
+    "employee_id": "DEV-E014",
+    "employee_name": "Dev Employee 014",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-014-L1",
+        "transport": "rail",
+        "depart_city": "Jinan",
+        "arrive_city": "Hefei",
+        "depart_date": "2026-05-12",
+        "arrive_date": "2026-05-12",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      },
+      {
+        "leg_id": "DEV-014-L2",
+        "transport": "rail",
+        "depart_city": "Hefei",
+        "arrive_city": "Nanjing",
+        "depart_date": "2026-05-13",
+        "arrive_date": "2026-05-13",
+        "cabin": "economy",
+        "amount_rmb": 240,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 240
+      },
+      {
+        "leg_id": "DEV-014-L3",
+        "transport": "rail",
+        "depart_city": "Nanjing",
+        "arrive_city": "Jinan",
+        "depart_date": "2026-05-14",
+        "arrive_date": "2026-05-14",
+        "cabin": "economy",
+        "amount_rmb": 330,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 330
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Hefei",
+        "check_in": "2026-05-12",
+        "check_out": "2026-05-13",
+        "nights": 1,
+        "amount_rmb": 340.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 340.0
+      },
+      {
+        "city": "Nanjing",
+        "check_in": "2026-05-13",
+        "check_out": "2026-05-14",
+        "nights": 1,
+        "amount_rmb": 340.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 340.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-014",
+      "approved_on": "2026-05-07",
+      "valid_from": "2026-05-12",
+      "valid_to": "2026-05-14",
+      "destination_cities": [
+        "Hefei"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-05-20",
+    "special_notes": "",
+    "employee_note": "Project visit to Hefei.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-014-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 014, Jinan to Hefei, travel date 2026-05-12, fare RMB 320, ticket no. TKT-DEV-014-1."
+      },
+      {
+        "attachment_id": "DEV-014-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 014, Hefei to Nanjing, travel date 2026-05-13, fare RMB 240, ticket no. TKT-DEV-014-2."
+      },
+      {
+        "attachment_id": "DEV-014-ATT-03",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[2]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 014, Nanjing to Jinan, travel date 2026-05-14, fare RMB 330, ticket no. TKT-DEV-014-3."
+      },
+      {
+        "attachment_id": "DEV-014-ATT-04",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 014, Hefei Project Hotel, 1 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-014-ATT-05",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 340, invoice no. INV-DEV-014-H1."
+      },
+      {
+        "attachment_id": "DEV-014-ATT-06",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[1]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 014, Nanjing Project Hotel, 1 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-014-ATT-07",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[1]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 340, invoice no. INV-DEV-014-H2."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-015",
+    "employee_id": "DEV-E015",
+    "employee_name": "Dev Employee 015",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-015-L1",
+        "transport": "rail",
+        "depart_city": "Kunming",
+        "arrive_city": "Wuhan",
+        "depart_date": "2026-06-14",
+        "arrive_date": "2026-06-14",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 340.0
+      },
+      {
+        "leg_id": "DEV-015-L2",
+        "transport": "rail",
+        "depart_city": "Wuhan",
+        "arrive_city": "Kunming",
+        "depart_date": "2026-06-16",
+        "arrive_date": "2026-06-16",
+        "cabin": "economy",
+        "amount_rmb": 300,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 300
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Wuhan",
+        "check_in": "2026-06-14",
+        "check_out": "2026-06-16",
+        "nights": 2,
+        "amount_rmb": 680.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 680.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-015",
+      "approved_on": "2026-06-09",
+      "valid_from": "2026-06-14",
+      "valid_to": "2026-06-16",
+      "destination_cities": [
+        "Wuhan"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-06-22",
+    "special_notes": "",
+    "employee_note": "Project visit to Wuhan.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-015-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 015, Kunming to Wuhan, travel date 2026-06-14, fare RMB 320, ticket no. TKT-DEV-015-1."
+      },
+      {
+        "attachment_id": "DEV-015-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 015, Wuhan to Kunming, travel date 2026-06-16, fare RMB 300, ticket no. TKT-DEV-015-2."
+      },
+      {
+        "attachment_id": "DEV-015-ATT-03",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 015, Wuhan Project Hotel, 2 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-015-ATT-04",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 680, invoice no. INV-DEV-015-H1."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-016",
+    "employee_id": "DEV-E016",
+    "employee_name": "Dev Employee 016",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-016-L1",
+        "transport": "rail",
+        "depart_city": "Nanjing",
+        "arrive_city": "Changsha",
+        "depart_date": "2026-07-16",
+        "arrive_date": "2026-07-16",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      },
+      {
+        "leg_id": "DEV-016-L2",
+        "transport": "rail",
+        "depart_city": "Changsha",
+        "arrive_city": "Nanjing",
+        "depart_date": "2026-07-18",
+        "arrive_date": "2026-07-18",
+        "cabin": "economy",
+        "amount_rmb": 300,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 300
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Changsha",
+        "check_in": "2026-07-16",
+        "check_out": "2026-07-18",
+        "nights": 2,
+        "amount_rmb": 1040,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 1040
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-016",
+      "approved_on": "2026-07-11",
+      "valid_from": "2026-07-16",
+      "valid_to": "2026-07-18",
+      "destination_cities": [
+        "Changsha"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-07-24",
+    "special_notes": "",
+    "employee_note": "Project visit to Changsha.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-016-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 016, Nanjing to Changsha, travel date 2026-07-16, fare RMB 320, ticket no. TKT-DEV-016-1."
+      },
+      {
+        "attachment_id": "DEV-016-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 016, Changsha to Nanjing, travel date 2026-07-18, fare RMB 300, ticket no. TKT-DEV-016-2."
+      },
+      {
+        "attachment_id": "DEV-016-ATT-03",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio, two nights at RMB 520 per night."
+      },
+      {
+        "attachment_id": "DEV-016-ATT-04",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 1040, invoice no. INV-DEV-016-H1."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-017",
+    "employee_id": "DEV-E017",
+    "employee_name": "Dev Employee 017",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-017-L1",
+        "transport": "rail",
+        "depart_city": "Hefei",
+        "arrive_city": "Chengdu",
+        "depart_date": "2026-08-18",
+        "arrive_date": "2026-08-18",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      },
+      {
+        "leg_id": "DEV-017-L2",
+        "transport": "rail",
+        "depart_city": "Chengdu",
+        "arrive_city": "Hefei",
+        "depart_date": "2026-08-20",
+        "arrive_date": "2026-08-20",
+        "cabin": "economy",
+        "amount_rmb": 300,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 300
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Chengdu",
+        "check_in": "2026-08-18",
+        "check_out": "2026-08-20",
+        "nights": 2,
+        "amount_rmb": 680.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 680.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 320
+    },
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-017",
+      "approved_on": "2026-08-13",
+      "valid_from": "2026-08-18",
+      "valid_to": "2026-08-20",
+      "destination_cities": [
+        "Chengdu"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-08-26",
+    "special_notes": "",
+    "employee_note": "Project visit to Chengdu.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-017-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 017, Hefei to Chengdu, travel date 2026-08-18, fare RMB 320, ticket no. TKT-DEV-017-1."
+      },
+      {
+        "attachment_id": "DEV-017-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 017, Chengdu to Hefei, travel date 2026-08-20, fare RMB 300, ticket no. TKT-DEV-017-2."
+      },
+      {
+        "attachment_id": "DEV-017-ATT-03",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 017, Chengdu Project Hotel, 2 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-017-ATT-04",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 680, invoice no. INV-DEV-017-H1."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-018",
+    "employee_id": "DEV-E018",
+    "employee_name": "Dev Employee 018",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-018-L1",
+        "transport": "rail",
+        "depart_city": "Wuhan",
+        "arrive_city": "Hangzhou",
+        "depart_date": "2026-09-02",
+        "arrive_date": "2026-09-02",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      },
+      {
+        "leg_id": "DEV-018-L2",
+        "transport": "rail",
+        "depart_city": "Hangzhou",
+        "arrive_city": "Wuhan",
+        "depart_date": "2026-09-04",
+        "arrive_date": "2026-09-04",
+        "cabin": "economy",
+        "amount_rmb": 300,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 300
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Hangzhou",
+        "check_in": "2026-09-02",
+        "check_out": "2026-09-04",
+        "nights": 2,
+        "amount_rmb": 680.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 680.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [
+      {
+        "category": "parking",
+        "description": "Site parking",
+        "amount_rmb": -60,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": -60
+      }
+    ],
+    "pre_approval": {
+      "approval_id": "PA-DEV-018",
+      "approved_on": "2026-08-28",
+      "valid_from": "2026-09-02",
+      "valid_to": "2026-09-04",
+      "destination_cities": [
+        "Hangzhou"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-09-10",
+    "special_notes": "",
+    "employee_note": "Project visit to Hangzhou.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-018-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 018, Wuhan to Hangzhou, travel date 2026-09-02, fare RMB 320, ticket no. TKT-DEV-018-1."
+      },
+      {
+        "attachment_id": "DEV-018-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 018, Hangzhou to Wuhan, travel date 2026-09-04, fare RMB 300, ticket no. TKT-DEV-018-2."
+      },
+      {
+        "attachment_id": "DEV-018-ATT-03",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 018, Hangzhou Project Hotel, 2 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-018-ATT-04",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 680, invoice no. INV-DEV-018-H1."
+      },
+      {
+        "attachment_id": "DEV-018-ATT-05",
+        "document_type": "other_invoice",
+        "linked_expense_refs": [
+          "other_expenses[0]"
+        ],
+        "ocr_description": "Parking receipt, amount RMB 60, invoice no. INV-DEV-018-O1."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-019",
+    "employee_id": "DEV-E019",
+    "employee_name": "Dev Employee 019",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-019-L1",
+        "transport": "rail",
+        "depart_city": "Changsha",
+        "arrive_city": "Jinan",
+        "depart_date": "2026-01-04",
+        "arrive_date": "2026-01-04",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      },
+      {
+        "leg_id": "DEV-019-L2",
+        "transport": "rail",
+        "depart_city": "Jinan",
+        "arrive_city": "Changsha",
+        "depart_date": "2026-01-06",
+        "arrive_date": "2026-01-06",
+        "cabin": "economy",
+        "amount_rmb": 300,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 300
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Jinan",
+        "check_in": "2026-01-04",
+        "check_out": "2026-01-06",
+        "nights": 3,
+        "amount_rmb": 680.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 680.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-019",
+      "approved_on": "2025-12-30",
+      "valid_from": "2026-01-04",
+      "valid_to": "2026-01-06",
+      "destination_cities": [
+        "Jinan"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-01-12",
+    "special_notes": "",
+    "employee_note": "Project visit to Jinan.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-019-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 019, Changsha to Jinan, travel date 2026-01-04, fare RMB 320, ticket no. TKT-DEV-019-1."
+      },
+      {
+        "attachment_id": "DEV-019-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 019, Jinan to Changsha, travel date 2026-01-06, fare RMB 300, ticket no. TKT-DEV-019-2."
+      },
+      {
+        "attachment_id": "DEV-019-ATT-03",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 019, Jinan Project Hotel, 2 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-019-ATT-04",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 680, invoice no. INV-DEV-019-H1."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-020",
+    "employee_id": "DEV-E020",
+    "employee_name": "Dev Employee 020",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-020-L1",
+        "transport": "rail",
+        "depart_city": "Chengdu",
+        "arrive_city": "Kunming",
+        "depart_date": "2026-02-06",
+        "arrive_date": "2026-02-05",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      },
+      {
+        "leg_id": "DEV-020-L2",
+        "transport": "rail",
+        "depart_city": "Kunming",
+        "arrive_city": "Nanjing",
+        "depart_date": "2026-02-07",
+        "arrive_date": "2026-02-07",
+        "cabin": "economy",
+        "amount_rmb": 240,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 240
+      },
+      {
+        "leg_id": "DEV-020-L3",
+        "transport": "rail",
+        "depart_city": "Nanjing",
+        "arrive_city": "Chengdu",
+        "depart_date": "2026-02-08",
+        "arrive_date": "2026-02-08",
+        "cabin": "economy",
+        "amount_rmb": 330,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 330
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Kunming",
+        "check_in": "2026-02-06",
+        "check_out": "2026-02-07",
+        "nights": 1,
+        "amount_rmb": 340.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 340.0
+      },
+      {
+        "city": "Nanjing",
+        "check_in": "2026-02-07",
+        "check_out": "2026-02-08",
+        "nights": 1,
+        "amount_rmb": 340.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 340.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-020",
+      "approved_on": "2026-02-01",
+      "valid_from": "2026-02-06",
+      "valid_to": "2026-02-08",
+      "destination_cities": [
+        "Kunming",
+        "Nanjing"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-02-14",
+    "special_notes": "",
+    "employee_note": "Project visit to Kunming.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-020-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 020, Chengdu to Kunming, travel date 2026-02-06, fare RMB 320, ticket no. TKT-DEV-020-1."
+      },
+      {
+        "attachment_id": "DEV-020-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 020, Kunming to Nanjing, travel date 2026-02-07, fare RMB 240, ticket no. TKT-DEV-020-2."
+      },
+      {
+        "attachment_id": "DEV-020-ATT-03",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[2]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 020, Nanjing to Chengdu, travel date 2026-02-08, fare RMB 330, ticket no. TKT-DEV-020-3."
+      },
+      {
+        "attachment_id": "DEV-020-ATT-04",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 020, Kunming Project Hotel, 1 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-020-ATT-05",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 340, invoice no. INV-DEV-020-H1."
+      },
+      {
+        "attachment_id": "DEV-020-ATT-06",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[1]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 020, Nanjing Project Hotel, 1 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-020-ATT-07",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[1]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 340, invoice no. INV-DEV-020-H2."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-021",
+    "employee_id": "DEV-E021",
+    "employee_name": "Dev Employee 021",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-021-L1",
+        "transport": "rail",
+        "depart_city": "Hangzhou",
+        "arrive_city": "Nanjing",
+        "depart_date": "2026-03-08",
+        "arrive_date": "2026-03-08",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      },
+      {
+        "leg_id": "DEV-021-L2",
+        "transport": "rail",
+        "depart_city": "Nanjing",
+        "arrive_city": "Hangzhou",
+        "depart_date": "2026-03-10",
+        "arrive_date": "2026-03-10",
+        "cabin": "economy",
+        "amount_rmb": 300,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 300
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Nanjing",
+        "check_in": "2026-03-08",
+        "check_out": "2026-03-10",
+        "nights": 2,
+        "amount_rmb": 680.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 680.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-021",
+      "approved_on": "2026-03-03",
+      "valid_from": "2026-03-08",
+      "valid_to": "2026-03-10",
+      "destination_cities": [
+        "Nanjing"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-03-16",
+    "special_notes": "",
+    "employee_note": "Project visit to Nanjing.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-021-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger name unreadable due to damaged scan, Hangzhou to Nanjing, travel date 2026-03-08, fare RMB 320, ticket no. TKT-DEV-021-1."
+      },
+      {
+        "attachment_id": "DEV-021-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 021, Nanjing to Hangzhou, travel date 2026-03-10, fare RMB 300, ticket no. TKT-DEV-021-2."
+      },
+      {
+        "attachment_id": "DEV-021-ATT-03",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 021, Nanjing Project Hotel, 2 nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-021-ATT-04",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 680, invoice no. INV-DEV-021-H1."
+      }
+    ]
+  },
+  {
+    "claim_id": "DEV-022",
+    "employee_id": "DEV-E022",
+    "employee_name": "Dev Employee 022",
+    "grade": "G2",
+    "transport_legs": [
+      {
+        "leg_id": "DEV-022-L1",
+        "transport": "rail",
+        "depart_city": "Jinan",
+        "arrive_city": "Hefei",
+        "depart_date": "2026-04-10",
+        "arrive_date": "2026-04-10",
+        "cabin": "economy",
+        "amount_rmb": 320.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 320.0
+      },
+      {
+        "leg_id": "DEV-022-L2",
+        "transport": "rail",
+        "depart_city": "Hefei",
+        "arrive_city": "Jinan",
+        "depart_date": "2026-04-12",
+        "arrive_date": "2026-04-12",
+        "cabin": "economy",
+        "amount_rmb": 300,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 300
+      }
+    ],
+    "hotel_stays": [
+      {
+        "city": "Hefei",
+        "check_in": "2026-04-10",
+        "check_out": "2026-04-12",
+        "nights": 2,
+        "amount_rmb": 680.0,
+        "deduction_rmb": 0,
+        "reimbursable_rmb": 680.0
+      }
+    ],
+    "meal_allowance": {
+      "days": 3,
+      "city_tier": "other",
+      "daily_rate": 80,
+      "total_rmb": 240
+    },
+    "other_expenses": [],
+    "pre_approval": {
+      "approval_id": "PA-DEV-022",
+      "approved_on": "2026-04-05",
+      "valid_from": "2026-04-10",
+      "valid_to": "2026-04-12",
+      "destination_cities": [
+        "Hefei"
+      ],
+      "estimated_total_rmb": 4000,
+      "special_request": ""
+    },
+    "has_travel_application": true,
+    "submitted_on": "2026-04-18",
+    "special_notes": "Declared meeting location: Hefei Q Company, Central Business District.",
+    "employee_note": "Project visit to Hefei.",
+    "attachments": [
+      {
+        "attachment_id": "DEV-022-ATT-01",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[0]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 022, Jinan to Hefei, travel date 2026-04-10, fare RMB 320, ticket no. TKT-DEV-022-1."
+      },
+      {
+        "attachment_id": "DEV-022-ATT-02",
+        "document_type": "transport_ticket",
+        "linked_expense_refs": [
+          "transport_legs[1]"
+        ],
+        "ocr_description": "Rail ticket passenger Dev Employee 022, Hefei to Jinan, travel date 2026-04-12, fare RMB 300, ticket no. TKT-DEV-022-2."
+      },
+      {
+        "attachment_id": "DEV-022-ATT-03",
+        "document_type": "hotel_folio",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "Hotel folio guest Dev Employee 022 at Hefei Remote Airport Hotel, address: North Airport Industrial Zone, Hefei; two nights at RMB 340 per night."
+      },
+      {
+        "attachment_id": "DEV-022-ATT-04",
+        "document_type": "hotel_invoice",
+        "linked_expense_refs": [
+          "hotel_stays[0]"
+        ],
+        "ocr_description": "VAT invoice for accommodation, amount RMB 680, invoice no. INV-DEV-022-H1."
+      }
+    ]
+  }
+]

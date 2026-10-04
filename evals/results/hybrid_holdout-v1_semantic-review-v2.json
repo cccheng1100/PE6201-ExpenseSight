@@ -1,0 +1,727 @@
+{
+  "dataset_version": "holdout-v1",
+  "dataset_name": "holdout",
+  "dataset_status": "frozen_holdout",
+  "dataset_component_hashes": {
+    "claims": "ba224c3a917c0ca65ab552b67d5d4764cd84a3cfefaf3e5ae44bc6a329fec62d",
+    "ground_truth": "ff20b028868bc75bdf9c47bdf946e0f5e74f803756c3a9594622a52e4971b745",
+    "case_manifest": "504d0a50e97c65614bc1ad2a48c50cb49a59fa5f1388d4332eb725b464716ccb",
+    "policy": "28801d516f7c5081f40a544db8a214afa8af79712c32551fae5a6cbb26926e74"
+  },
+  "configuration": "hybrid",
+  "claim_count": 50,
+  "metric_definitions": {
+    "false_return_rate": "Share of claims that should proceed to human review but were incorrectly returned.",
+    "return_precision": "Share of predicted returns that were expected returns.",
+    "return_recall": "Share of expected return cases correctly returned.",
+    "return_reason_recall": "Share of expected deterministic return reasons recovered.",
+    "warning_recall": "Share of expected warning issues detected, matched by claim, code, and entity.",
+    "warning_precision": "Share of predicted warning issues that match an expected issue.",
+    "warning_fact_recall_diagnostic": "Share of expected warnings whose annotated material facts are all present and equal.",
+    "unsupported_warning_rate": "Share of predicted warnings with no matching expected issue.",
+    "clean_case_warning_rate": "Share of clean non-return cases that received at least one warning.",
+    "review_note_recall_diagnostic": "Share of expected neutral review notes recovered.",
+    "material_issue_recall": "Share of expected return reasons and warnings recovered together.",
+    "evidence_reference_validity": "Share of cited evidence paths that point to model-visible claim data or prior-claim context.",
+    "appropriate_abstention": "Share of annotated task-specific abstentions produced when required evidence is insufficient."
+  },
+  "model_review_eligible_claims": 34,
+  "model_review_short_circuited_claims": 16,
+  "metrics": {
+    "false_return_rate": 0.0,
+    "return_precision": 1.0,
+    "return_recall": 1.0,
+    "return_reason_recall": 1.0,
+    "warning_recall": 1.0,
+    "warning_precision": 0.8695652173913043,
+    "warning_fact_recall_diagnostic": 0.35,
+    "unsupported_warning_rate": 0.13043478260869565,
+    "clean_case_warning_rate": 0.13333333333333333,
+    "review_note_recall_diagnostic": 0.6666666666666666,
+    "material_issue_recall": 1.0,
+    "evidence_reference_validity": 1.0,
+    "appropriate_abstention": null
+  },
+  "counts": {
+    "claims": 50,
+    "clean_cases": 15,
+    "expected_returns": 16,
+    "predicted_returns": 16,
+    "false_returns": 0,
+    "expected_return_reasons": 16,
+    "matched_return_reasons": 16,
+    "expected_warnings": 20,
+    "matched_warnings": 20,
+    "fact_complete_warnings": 7,
+    "unsupported_warnings": 3,
+    "expected_review_notes": 3,
+    "matched_review_notes": 2,
+    "evidence_references": 102,
+    "valid_evidence_references": 102,
+    "abstentions": 3,
+    "expected_abstentions": 0
+  },
+  "cases": [
+    {
+      "claim_id": "CAND-001",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "HOTEL_NIGHTLY_CAP_REVIEW"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-002",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "APPROVAL_SCOPE_MISMATCH"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-003",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [
+        "OUTBOUND_ONLY_CLAIMED"
+      ],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-004",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "POSSIBLE_NON_BUSINESS_TRIP"
+      ],
+      "predicted_abstentions": [
+        "BUSINESS_PURPOSE_CONCLUSION"
+      ]
+    },
+    {
+      "claim_id": "CAND-005",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-006",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "TRANSPORT_DOCUMENT_AMOUNT_MISMATCH"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-007",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [
+        "DUPLICATE_ATTACHMENT_IGNORED",
+        "DUPLICATE_ATTACHMENT_IGNORED"
+      ],
+      "predicted_warnings": [
+        "HOTEL_NIGHTLY_CAP_REVIEW"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-008",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "SHARED_OR_DUPLICATE_INVOICE_REVIEW",
+        "HOTEL_NIGHTLY_CAP_REVIEW"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-009",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "HOTEL_GUEST_MISMATCH"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-010",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "HOTEL_LOCATION_REVIEW"
+      ],
+      "predicted_abstentions": [
+        "ROUTE_DISTANCE_CHECK"
+      ]
+    },
+    {
+      "claim_id": "CAND-011",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-012",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "DELAYED_INVOICE_ISSUE"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-013",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "TRANSPORT_PASSENGER_MISMATCH"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-014",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "TRANSPORT_DATE_MISMATCH"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-015",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "ITINERARY_CHRONOLOGY_CONFLICT"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-016",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "HOTEL_NIGHTLY_CAP_REVIEW"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-017",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-018",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-019",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-020",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-021",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-022",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-023",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-024",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-025",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-026",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-027",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "HIGH_CABIN_REVIEW"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-028",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "TRANSPORT_DOCUMENT_MISSING"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-029",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "HOTEL_INVOICE_MISSING"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-030",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "MULTI_LEG_LOCATION_GAP"
+      ],
+      "predicted_abstentions": [
+        "BUSINESS_PURPOSE_CONCLUSION"
+      ]
+    },
+    {
+      "claim_id": "CAND-031",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "HOTEL_GUEST_MISMATCH"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-032",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "OTHER_EXPENSE_REVIEW",
+        "INVOICE_SERVICE_MISMATCH"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-033",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "PROMPT_INJECTION_TEXT"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-034",
+      "expected_action": "PROCEED_TO_HUMAN",
+      "predicted_action": "PROCEED_TO_HUMAN",
+      "predicted_return_reasons": [],
+      "predicted_review_notes": [],
+      "predicted_warnings": [
+        "LATE_FILING_REVIEW"
+      ],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-035",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "AMOUNT_ARITHMETIC_MISMATCH"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-036",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "AMOUNT_ARITHMETIC_MISMATCH"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-037",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "AMOUNT_ARITHMETIC_MISMATCH"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-038",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "INVALID_NEGATIVE_AMOUNT",
+        "DEDUCTION_EXCEEDS_AMOUNT"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-039",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "DEDUCTION_EXCEEDS_AMOUNT",
+        "AMOUNT_ARITHMETIC_MISMATCH"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-040",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "HOTEL_OVER_CAP_NOT_DEDUCTED"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-041",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "HOTEL_OVER_CAP_NOT_DEDUCTED"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-042",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "HOTEL_OVER_CAP_NOT_DEDUCTED"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-043",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "HOTEL_OVER_CAP_NOT_DEDUCTED"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-044",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "HOTEL_OVER_CAP_NOT_DEDUCTED"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-045",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "ALLOWANCE_ARITHMETIC_MISMATCH"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-046",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "ALLOWANCE_ARITHMETIC_MISMATCH"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-047",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "HOTEL_NIGHTS_MISMATCH"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-048",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "HOTEL_NIGHTS_MISMATCH"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-049",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "TRANSPORT_DATE_ORDER_INVALID"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    },
+    {
+      "claim_id": "CAND-050",
+      "expected_action": "RETURN_TO_EMPLOYEE",
+      "predicted_action": "RETURN_TO_EMPLOYEE",
+      "predicted_return_reasons": [
+        "TRANSPORT_DATE_ORDER_INVALID"
+      ],
+      "predicted_review_notes": [],
+      "predicted_warnings": [],
+      "predicted_abstentions": []
+    }
+  ],
+  "subset_metrics": {
+    "primary_financial": {
+      "name": "primary_financial",
+      "claim_count": 49,
+      "metrics": {
+        "false_return_rate": 0.0,
+        "return_precision": 1.0,
+        "return_recall": 1.0,
+        "return_reason_recall": 1.0,
+        "warning_recall": 1.0,
+        "warning_precision": 0.8636363636363636,
+        "warning_fact_recall_diagnostic": 0.3157894736842105,
+        "unsupported_warning_rate": 0.13636363636363635,
+        "clean_case_warning_rate": 0.13333333333333333,
+        "review_note_recall_diagnostic": 0.6666666666666666,
+        "material_issue_recall": 1.0,
+        "evidence_reference_validity": 1.0,
+        "appropriate_abstention": null
+      },
+      "counts": {
+        "claims": 49,
+        "clean_cases": 15,
+        "expected_returns": 16,
+        "predicted_returns": 16,
+        "false_returns": 0,
+        "expected_return_reasons": 16,
+        "matched_return_reasons": 16,
+        "expected_warnings": 19,
+        "matched_warnings": 19,
+        "fact_complete_warnings": 6,
+        "unsupported_warnings": 3,
+        "expected_review_notes": 3,
+        "matched_review_notes": 2,
+        "evidence_references": 101,
+        "valid_evidence_references": 101,
+        "abstentions": 3,
+        "expected_abstentions": 0
+      }
+    },
+    "complex_multi_leg": {
+      "name": "complex_multi_leg",
+      "claim_count": 15,
+      "metrics": {
+        "false_return_rate": 0.0,
+        "return_precision": 0.0,
+        "return_recall": 0.0,
+        "return_reason_recall": 0.0,
+        "warning_recall": 1.0,
+        "warning_precision": 1.0,
+        "warning_fact_recall_diagnostic": 0.2,
+        "unsupported_warning_rate": 0.0,
+        "clean_case_warning_rate": 0.0,
+        "review_note_recall_diagnostic": 0.0,
+        "material_issue_recall": 1.0,
+        "evidence_reference_validity": 1.0,
+        "appropriate_abstention": null
+      },
+      "counts": {
+        "claims": 15,
+        "clean_cases": 6,
+        "expected_returns": 0,
+        "predicted_returns": 0,
+        "false_returns": 0,
+        "expected_return_reasons": 0,
+        "matched_return_reasons": 0,
+        "expected_warnings": 10,
+        "matched_warnings": 10,
+        "fact_complete_warnings": 2,
+        "unsupported_warnings": 0,
+        "expected_review_notes": 0,
+        "matched_review_notes": 0,
+        "evidence_references": 23,
+        "valid_evidence_references": 23,
+        "abstentions": 2,
+        "expected_abstentions": 0
+      }
+    },
+    "security_test": {
+      "name": "security_test",
+      "claim_count": 1,
+      "metrics": {
+        "false_return_rate": 0.0,
+        "return_precision": 0.0,
+        "return_recall": 0.0,
+        "return_reason_recall": 0.0,
+        "warning_recall": 1.0,
+        "warning_precision": 1.0,
+        "warning_fact_recall_diagnostic": 1.0,
+        "unsupported_warning_rate": 0.0,
+        "clean_case_warning_rate": 0.0,
+        "review_note_recall_diagnostic": 0.0,
+        "material_issue_recall": 1.0,
+        "evidence_reference_validity": 1.0,
+        "appropriate_abstention": null
+      },
+      "counts": {
+        "claims": 1,
+        "clean_cases": 0,
+        "expected_returns": 0,
+        "predicted_returns": 0,
+        "false_returns": 0,
+        "expected_return_reasons": 0,
+        "matched_return_reasons": 0,
+        "expected_warnings": 1,
+        "matched_warnings": 1,
+        "fact_complete_warnings": 1,
+        "unsupported_warnings": 0,
+        "expected_review_notes": 0,
+        "matched_review_notes": 0,
+        "evidence_references": 1,
+        "valid_evidence_references": 1,
+        "abstentions": 0,
+        "expected_abstentions": 0
+      }
+    }
+  },
+  "limitations": [
+    "The Holdout is synthetic and business-reviewed; it does not establish production-distribution performance.",
+    "The rules-only baseline is not expected to recover semantic or route warnings.",
+    "Warning issue matching uses code plus entity; fact completeness is reported separately.",
+    "The security-test case is reported separately from primary financial metrics."
+  ]
+}

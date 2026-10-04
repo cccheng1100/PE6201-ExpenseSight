@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://expensesight.local/schemas/model_review_output.schema.json",
+  "title": "ExpenseSight advisory model output",
+  "$defs": {
+    "material_facts": {
+      "type": "object",
+      "description": "Only material, directly supported facts needed to check the note or warning. Include the relevant named properties; do not leave this object empty when a note or warning is emitted.",
+      "additionalProperties": false,
+      "properties": {
+        "additional_destination": {"type": "string"},
+        "allowance_claimed": {"type": "boolean"},
+        "applicable_cap_rmb": {"type": "number"},
+        "approved_destination": {"type": "string"},
+        "business_area": {"type": "string"},
+        "cabin": {"type": "string"},
+        "category": {"type": "string"},
+        "cause": {"type": "string"},
+        "claim_employee": {"type": "string"},
+        "claimed_amount_rmb": {"type": "number"},
+        "claimed_direction": {"type": "string"},
+        "claimed_service": {"type": "string"},
+        "claimed_travel_date": {"type": "string"},
+        "connecting_document": {"type": "string"},
+        "declared_business_location": {"type": "string"},
+        "delay": {"type": "string"},
+        "delay_days": {"type": "number"},
+        "destination_arrival": {"type": "string"},
+        "destination_type": {"type": "string"},
+        "document_name": {"type": "string"},
+        "duplicate_attachment_count": {"type": "number"},
+        "extracted_document_amount_rmb": {"type": "number"},
+        "folio_guest": {"type": "string"},
+        "hotel_area": {"type": "string"},
+        "hotel_check_in": {"type": "string"},
+        "hotel_claimed": {"type": "boolean"},
+        "invoice_service": {"type": "string"},
+        "missing": {"type": "string"},
+        "nightly_charges_rmb": {"type": "array", "items": {"type": "number"}},
+        "origin_type": {"type": "string"},
+        "relationship": {"type": "string"},
+        "review_threshold_days": {"type": "number"},
+        "same_day_round_trip": {"type": "boolean"},
+        "source": {"type": "string"},
+        "ticket_passenger": {"type": "string"},
+        "ticket_travel_date": {"type": "string"},
+        "treatment": {"type": "string"},
+        "unique_documents_support_claim": {"type": "boolean"},
+        "unreadable_field": {"type": "string"}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["claim_id", "review_notes", "warnings", "abstentions"],
+  "properties": {
+    "claim_id": {"type": "string", "minLength": 1},
+    "review_notes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["note_code", "category", "entity_ref", "facts", "evidence_refs", "text"],
+        "properties": {
+          "note_code": {"type": "string", "minLength": 1},
+          "category": {"type": "string", "minLength": 1},
+          "entity_ref": {"type": "string", "minLength": 1},
+          "facts": {"$ref": "#/$defs/material_facts"},
+          "evidence_refs": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "text": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["warning_code", "category", "entity_ref", "facts", "evidence_refs", "materiality", "explanation"],
+        "properties": {
+          "warning_code": {"type": "string", "minLength": 1},
+          "category": {"type": "string", "minLength": 1},
+          "entity_ref": {"type": "string", "minLength": 1},
+          "facts": {"$ref": "#/$defs/material_facts"},
+          "evidence_refs": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "policy_clause": {"type": ["string", "null"]},
+          "materiality": {"type": "string", "enum": ["material", "high", "guardrail"]},
+          "explanation": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "abstentions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["task_code", "entity_ref", "reason", "missing_evidence_refs"],
+        "properties": {
+          "task_code": {"type": "string", "minLength": 1},
+          "entity_ref": {"type": "string", "minLength": 1},
+          "reason": {"type": "string", "minLength": 1},
+          "missing_evidence_refs": {"type": "array", "items": {"type": "string", "minLength": 1}}
+        }
+      }
+    }
+  }
+}

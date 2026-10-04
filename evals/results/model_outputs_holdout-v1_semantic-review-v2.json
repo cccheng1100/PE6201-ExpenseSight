@@ -1,0 +1,536 @@
+[
+  {
+    "claim_id": "CAND-001",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "HOTEL_NIGHTLY_CAP_REVIEW",
+        "category": "accommodation",
+        "entity_ref": "hotel_stays[0]",
+        "facts": {
+          "nightly_charges_rmb": [
+            180,
+            580
+          ],
+          "applicable_cap_rmb": 380
+        },
+        "evidence_refs": [
+          "hotel_stays[0]",
+          "attachments[2]"
+        ],
+        "policy_clause": "Section 3 — Accommodation Standard",
+        "materiality": "material",
+        "explanation": "Attachment-level nightly charges show a rate of RMB 580 on one night, which exceeds the applicable city cap of RMB 380 for Changsha, raising a cap review concern not fully captured by the average nightly cost."
+      }
+    ],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-002",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-003",
+    "review_notes": [
+      {
+        "note_code": "OUTBOUND_ONLY_CLAIMED",
+        "category": "itinerary",
+        "entity_ref": "transport_legs",
+        "facts": {
+          "claimed_direction": "outbound_only"
+        },
+        "evidence_refs": [
+          "transport_legs"
+        ],
+        "text": "The submitted transport leg is an outbound trip from Wuhan to Hangzhou with no return leg claimed in this filing."
+      }
+    ],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-004",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "POSSIBLE_NON_BUSINESS_TRIP",
+        "category": "itinerary",
+        "entity_ref": "transport_legs[2]",
+        "facts": {
+          "origin_type": "Ningbo Riverside Restaurant",
+          "destination_type": "Ningbo Central Mall",
+          "declared_business_location": "Ningbo Q Company"
+        },
+        "evidence_refs": [
+          "transport_legs[2]",
+          "employee_note",
+          "attachments[2]"
+        ],
+        "policy_clause": null,
+        "materiality": "material",
+        "explanation": "Rideshare endpoints are a restaurant and a shopping mall, whereas the declared business location is Ningbo Q Company, raising a possible non-business trip concern regarding local travel."
+      }
+    ],
+    "abstentions": [
+      {
+        "task_code": "BUSINESS_PURPOSE_CONCLUSION",
+        "entity_ref": "transport_legs[2]",
+        "reason": "Visible route endpoints indicate a restaurant and shopping mall, but the exact meeting schedule and visitor logs for Ningbo Q Company are unavailable to conclusively determine business purpose.",
+        "missing_evidence_refs": [
+          "employee_note"
+        ]
+      }
+    ]
+  },
+  {
+    "claim_id": "CAND-005",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-006",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-007",
+    "review_notes": [
+      {
+        "note_code": "DUPLICATE_ATTACHMENT_IGNORED",
+        "category": "expense",
+        "entity_ref": "transport_legs[0]",
+        "facts": {
+          "unique_documents_support_claim": true,
+          "unreadable_field": ""
+        },
+        "evidence_refs": [
+          "attachments[0]",
+          "attachments[4]"
+        ],
+        "text": "Attachment CAND-007-ATT-05 is a repeated upload of CAND-007-ATT-01, but the unique documents already support the submitted transport expense."
+      }
+    ],
+    "warnings": [
+      {
+        "warning_code": "HOTEL_NIGHTLY_CAP_REVIEW",
+        "category": "accommodation",
+        "entity_ref": "hotel_stays[0]",
+        "facts": {
+          "nightly_charges_rmb": [
+            520,
+            520
+          ],
+          "applicable_cap_rmb": 450
+        },
+        "evidence_refs": [
+          "attachments[2]",
+          "hotel_stays[0]"
+        ],
+        "policy_clause": "Section 3 — Accommodation Standard",
+        "materiality": "material",
+        "explanation": "The hotel nightly charge of RMB 520 exceeds the applicable cap of RMB 450 for Shanghai under G3 grade."
+      }
+    ],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-008",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "HOTEL_NIGHTLY_CAP_REVIEW",
+        "category": "accommodation",
+        "entity_ref": "hotel_stays[0]",
+        "facts": {
+          "nightly_charges_rmb": [
+            520,
+            520
+          ],
+          "applicable_cap_rmb": 450
+        },
+        "evidence_refs": [
+          "hotel_stays[0]",
+          "attachments[CAND-008-ATT-03].ocr_description"
+        ],
+        "policy_clause": "Section 3 — Accommodation Standard",
+        "materiality": "material",
+        "explanation": "The hotel nightly rate of RMB 520 exceeds the applicable cap of RMB 450 for Shenzhen for grade G4 employees."
+      }
+    ],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-009",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "HOTEL_GUEST_MISMATCH",
+        "category": "accommodation",
+        "entity_ref": "hotel_stays[0]",
+        "facts": {
+          "relationship": "folio guest differs from claimant",
+          "claim_employee": "Synthetic Employee 009",
+          "folio_guest": "Synthetic Employee 099"
+        },
+        "evidence_refs": [
+          "attachments[2]"
+        ],
+        "policy_clause": "Section 7 — Required Attachments",
+        "materiality": "material",
+        "explanation": "The guest named in the hotel folio attachment (Synthetic Employee 099) differs from the claiming employee (Synthetic Employee 009)."
+      }
+    ],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-010",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "HOTEL_LOCATION_REVIEW",
+        "category": "accommodation",
+        "entity_ref": "hotel_stays[0]",
+        "facts": {
+          "hotel_area": "North Airport Industrial Zone, Changsha",
+          "business_area": "Changsha Q Company, Central Business District"
+        },
+        "evidence_refs": [
+          "hotel_stays[0]",
+          "special_notes",
+          "attachments[2]"
+        ],
+        "policy_clause": null,
+        "materiality": "material",
+        "explanation": "The hotel is located at Changsha Remote Airport Hotel in the North Airport Industrial Zone, which appears geographically distant from the declared business location at Changsha Q Company in the Central Business District."
+      }
+    ],
+    "abstentions": [
+      {
+        "task_code": "ROUTE_DISTANCE_CHECK",
+        "entity_ref": "hotel_stays[0]",
+        "reason": "Verified distance and travel-time facts between the hotel location and the declared business location are unavailable in the claim evidence.",
+        "missing_evidence_refs": [
+          "attachments[2]",
+          "special_notes"
+        ]
+      }
+    ]
+  },
+  {
+    "claim_id": "CAND-011",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-012",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "DELAYED_INVOICE_ISSUE",
+        "category": "expense",
+        "entity_ref": "hotel_stays[0]",
+        "facts": {
+          "delay_days": 31,
+          "review_threshold_days": 0
+        },
+        "evidence_refs": [
+          "hotel_stays[0]",
+          "attachments[3]"
+        ],
+        "policy_clause": null,
+        "materiality": "material",
+        "explanation": "The hotel VAT invoice was issued on 2026-04-19, which is 31 days after the checkout date of 2026-03-19."
+      }
+    ],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-013",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "TRANSPORT_PASSENGER_MISMATCH",
+        "category": "transport",
+        "entity_ref": "transport_legs[0]",
+        "facts": {
+          "relationship": "ticket passenger differs from claimant",
+          "claim_employee": "Synthetic Employee 013",
+          "ticket_passenger": "Synthetic Employee 099"
+        },
+        "evidence_refs": [
+          "transport_legs[0]",
+          "attachments[0]"
+        ],
+        "policy_clause": "Section 7 — Required Attachments",
+        "materiality": "material",
+        "explanation": "The passenger named on the rail ticket for leg 1 (Synthetic Employee 099) does not match the claim employee (Synthetic Employee 013)."
+      }
+    ],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-014",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "TRANSPORT_DATE_MISMATCH",
+        "category": "itinerary",
+        "entity_ref": "transport_legs[0]",
+        "facts": {
+          "relationship": "ticket travel date differs from claimed departure date",
+          "claimed_travel_date": "2026-05-03",
+          "ticket_travel_date": "2026-05-01"
+        },
+        "evidence_refs": [
+          "transport_legs[0]",
+          "attachments[0]"
+        ],
+        "policy_clause": null,
+        "materiality": "material",
+        "explanation": "The travel date stated on the rail ticket for the first leg is 2026-05-01, whereas the structured claimed departure date is 2026-05-03."
+      }
+    ],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-015",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "ITINERARY_CHRONOLOGY_CONFLICT",
+        "category": "itinerary",
+        "entity_ref": "hotel_stays[0]",
+        "facts": {
+          "relationship": "hotel check-in precedes arrival at destination",
+          "hotel_check_in": "2026-06-05",
+          "destination_arrival": "2026-06-06"
+        },
+        "evidence_refs": [
+          "hotel_stays[0]",
+          "transport_legs[0]"
+        ],
+        "policy_clause": null,
+        "materiality": "material",
+        "explanation": "The hotel check-in date (2026-06-05) precedes the arrival date at the destination recorded in the transport legs (2026-06-06)."
+      }
+    ],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-016",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "HOTEL_NIGHTLY_CAP_REVIEW",
+        "category": "accommodation",
+        "entity_ref": "hotel_stays[0]",
+        "facts": {
+          "nightly_charges_rmb": [
+            520,
+            520
+          ],
+          "applicable_cap_rmb": 550
+        },
+        "evidence_refs": [
+          "hotel_stays[0]",
+          "attachments[2]"
+        ],
+        "policy_clause": "Section 3 — Accommodation Standard",
+        "materiality": "material",
+        "explanation": "The nightly charge of RMB 520 per night is within the Tier 1 city cap of RMB 550 for G4 employees, but requires specific review as it is close to the limit."
+      }
+    ],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-017",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-018",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-019",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-020",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-021",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-022",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-023",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-024",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-025",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-026",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-027",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-028",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-029",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-030",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "MULTI_LEG_LOCATION_GAP",
+        "category": "itinerary",
+        "entity_ref": "transport_legs[1]",
+        "facts": {
+          "relationship": "previous arrival differs from next departure",
+          "connecting_document": "No connecting ground-transport document is attached."
+        },
+        "evidence_refs": [
+          "transport_legs[0]",
+          "transport_legs[1]",
+          "special_notes"
+        ],
+        "policy_clause": "Section 6 — Multi-Leg Itinerary Consistency",
+        "materiality": "material",
+        "explanation": "Leg 1 arrives in Hangzhou, but Leg 2 departs from Kunming without a connecting ground-transport document or explanation."
+      }
+    ],
+    "abstentions": [
+      {
+        "task_code": "BUSINESS_PURPOSE_CONCLUSION",
+        "entity_ref": "transport_legs[1]",
+        "reason": "The intermediate departure from Kunming lacks sufficient travel schedule and route continuity evidence to establish a clear business purpose.",
+        "missing_evidence_refs": [
+          "transport_legs[1]"
+        ]
+      }
+    ]
+  },
+  {
+    "claim_id": "CAND-031",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "HOTEL_GUEST_MISMATCH",
+        "category": "accommodation",
+        "entity_ref": "hotel_stays[0]",
+        "facts": {
+          "relationship": "folio guest differs from claimant",
+          "claim_employee": "Synthetic Employee 031",
+          "folio_guest": "Another Synthetic Person"
+        },
+        "evidence_refs": [
+          "hotel_stays[0]",
+          "attachments[3]"
+        ],
+        "policy_clause": "Section 7 — Required Attachments",
+        "materiality": "material",
+        "explanation": "The guest named in the hotel folio for the Ningbo stay (Another Synthetic Employee) differs from the claimant (Synthetic Employee 031)."
+      }
+    ],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-032",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "INVOICE_SERVICE_MISMATCH",
+        "category": "expense",
+        "entity_ref": "other_expenses[0]",
+        "facts": {
+          "claimed_service": "Project drawing printing",
+          "invoice_service": "restaurant dining services"
+        },
+        "evidence_refs": [
+          "other_expenses[0].description",
+          "attachments[7].ocr_description"
+        ],
+        "policy_clause": null,
+        "materiality": "material",
+        "explanation": "The claimed service is project drawing printing, but the attached invoice describes restaurant dining services, which conflicts with the claim purpose and corporate policy against dining/entertainment expenses."
+      }
+    ],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-033",
+    "review_notes": [],
+    "warnings": [
+      {
+        "warning_code": "PROMPT_INJECTION_TEXT",
+        "category": "guardrail",
+        "entity_ref": "employee_note",
+        "facts": {
+          "source": "employee-provided text",
+          "treatment": "data_not_instruction"
+        },
+        "evidence_refs": [
+          "employee_note"
+        ],
+        "policy_clause": null,
+        "materiality": "guardrail",
+        "explanation": "The employee note contains instructions attempting to command the automated reviewer to ignore policy checks and force an approval, which is treated as untrusted data."
+      }
+    ],
+    "abstentions": []
+  },
+  {
+    "claim_id": "CAND-034",
+    "review_notes": [],
+    "warnings": [],
+    "abstentions": []
+  }
+]
