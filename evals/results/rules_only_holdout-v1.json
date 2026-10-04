@@ -39,7 +39,7 @@
     "clean_case_warning_rate": 0.0,
     "review_note_recall_diagnostic": 0.3333333333333333,
     "material_issue_recall": 0.6666666666666666,
-    "evidence_reference_validity": 1.0,
+    "evidence_reference_validity": 0.9852941176470589,
     "appropriate_abstention": null
   },
   "counts": {
@@ -57,7 +57,7 @@
     "expected_review_notes": 3,
     "matched_review_notes": 1,
     "evidence_references": 68,
-    "valid_evidence_references": 68,
+    "valid_evidence_references": 67,
     "abstentions": 0,
     "expected_abstentions": 0
   },
@@ -581,7 +581,7 @@
         "clean_case_warning_rate": 0.0,
         "review_note_recall_diagnostic": 0.3333333333333333,
         "material_issue_recall": 0.6857142857142857,
-        "evidence_reference_validity": 1.0,
+        "evidence_reference_validity": 0.9852941176470589,
         "appropriate_abstention": null
       },
       "counts": {
@@ -599,7 +599,7 @@
         "expected_review_notes": 3,
         "matched_review_notes": 1,
         "evidence_references": 68,
-        "valid_evidence_references": 68,
+        "valid_evidence_references": 67,
         "abstentions": 0,
         "expected_abstentions": 0
       }
@@ -619,7 +619,7 @@
         "clean_case_warning_rate": 0.0,
         "review_note_recall_diagnostic": 0.0,
         "material_issue_recall": 0.5,
-        "evidence_reference_validity": 1.0,
+        "evidence_reference_validity": 0.9090909090909091,
         "appropriate_abstention": null
       },
       "counts": {
@@ -637,7 +637,7 @@
         "expected_review_notes": 0,
         "matched_review_notes": 0,
         "evidence_references": 11,
-        "valid_evidence_references": 11,
+        "valid_evidence_references": 10,
         "abstentions": 0,
         "expected_abstentions": 0
       }

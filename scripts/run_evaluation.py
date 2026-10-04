@@ -7,6 +7,7 @@ the final business action.
 from __future__ import annotations
 
 import argparse
+from dataclasses import asdict
 import hashlib
 import json
 from pathlib import Path
@@ -22,8 +23,16 @@ if str(SRC) not in sys.path:
 from expensesight.contracts import DecisionType
 from expensesight.evaluation import METRIC_DEFINITIONS, decision_to_record, evaluate_records
 from expensesight.io import claim_from_dict
-from expensesight.model_output import parse_model_review_output
+from expensesight.model_output import (
+    parse_model_review_output,
+    validate_warning_taxonomy_contract,
+)
+from expensesight.openrouter import load_review_assets
 from expensesight.pipeline import run_pipeline
+from expensesight.rules import run_rules
+
+
+MODEL_OUTPUT_PIPELINE_VERSION = "model-output-pipeline-v2"
 
 
 DATASETS = {
@@ -69,13 +78,78 @@ def _load_and_verify_version(version_path: Path) -> dict[str, Any]:
     return descriptor
 
 
-def _load_model_outputs(path: Path, required_claim_ids: list[str]) -> dict[str, Any]:
+def _json_sha256(value: Any) -> str:
+    encoded = json.dumps(
+        value,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
+
+
+def _configuration_descriptor(model: str, assets: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "pipeline_contract": MODEL_OUTPUT_PIPELINE_VERSION,
+        "model": model,
+        "system_prompt_sha256": _json_sha256(assets["system_prompt"]),
+        "request_template_sha256": _json_sha256(assets["request_template"]),
+        "policy_context_sha256": _json_sha256(assets["policy_context"]),
+        "warning_taxonomy_sha256": _json_sha256(assets["warning_taxonomy"]),
+        "output_schema_sha256": _json_sha256(assets["output_schema"]),
+    }
+
+
+def _claim_input_sha256(claim_raw: dict[str, Any], findings: list[dict[str, Any]]) -> str:
+    return _json_sha256({"claim": claim_raw, "deterministic_findings": findings})
+
+
+def _load_model_outputs(
+    path: Path,
+    required_claim_ids: list[str],
+    dataset: str,
+    eligible_input_hashes: dict[str, str],
+) -> dict[str, Any]:
     raw = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(raw, list):
         raise ValueError("Hybrid prediction file must contain a JSON list")
+
+    metadata_path = path.with_name(f"{path.stem}.metadata.json")
+    if not metadata_path.exists():
+        raise FileNotFoundError(
+            f"Hybrid evaluation requires matching provenance metadata: {metadata_path}"
+        )
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    if metadata.get("dataset") != dataset:
+        raise ValueError("Model-output metadata belongs to a different dataset")
+
+    assets = load_review_assets(ROOT)
+    model = metadata.get("requested_model")
+    if not isinstance(model, str) or not model:
+        raise ValueError("Model-output metadata is missing requested_model")
+    expected_configuration = _configuration_descriptor(model, assets)
+    expected_configuration_sha256 = _json_sha256(expected_configuration)
+    if metadata.get("configuration") != expected_configuration:
+        raise ValueError("Model-output metadata does not match the current review assets")
+    if metadata.get("configuration_sha256") != expected_configuration_sha256:
+        raise ValueError("Model-output configuration hash mismatch")
+
+    calls = metadata.get("calls")
+    if not isinstance(calls, list):
+        raise ValueError("Model-output metadata calls must be a list")
+    calls_by_id = {}
+    for call in calls:
+        if not isinstance(call, dict) or not isinstance(call.get("claim_id"), str):
+            raise ValueError("Model-output metadata contains an invalid call record")
+        claim_id = call["claim_id"]
+        if claim_id in calls_by_id:
+            raise ValueError(f"Duplicate metadata call for {claim_id}")
+        calls_by_id[claim_id] = call
+
     parsed = {}
     for item in raw:
         output = parse_model_review_output(item)
+        validate_warning_taxonomy_contract(output, assets["warning_taxonomy"])
         if output.claim_id in parsed:
             raise ValueError(f"Duplicate model output for {output.claim_id}")
         parsed[output.claim_id] = output
@@ -86,6 +160,17 @@ def _load_model_outputs(path: Path, required_claim_ids: list[str]) -> dict[str, 
             "Hybrid outputs must cover exactly the non-return claims; "
             f"missing={missing}, extra={extra}"
         )
+    if set(calls_by_id) != set(required_claim_ids):
+        raise ValueError("Model-output metadata must cover exactly the required claim IDs")
+    if metadata.get("validated_output_count") != len(raw) or metadata.get("call_count") != len(calls):
+        raise ValueError("Model-output metadata counts do not match the saved outputs")
+    for claim_id, call in calls_by_id.items():
+        if call.get("status") != "validated":
+            raise ValueError(f"Model output for {claim_id} is not marked validated")
+        if call.get("configuration_sha256") != expected_configuration_sha256:
+            raise ValueError(f"Configuration provenance mismatch for {claim_id}")
+        if call.get("input_sha256") != eligible_input_hashes[claim_id]:
+            raise ValueError(f"Input provenance mismatch for {claim_id}")
     return parsed
 
 
@@ -124,7 +209,21 @@ def run_evaluation(
             for decision in rules_decisions
             if decision.action != DecisionType.RETURN_TO_EMPLOYEE
         ]
-        model_outputs = _load_model_outputs(model_outputs_path, required_ids)
+        previous = []
+        eligible_input_hashes = {}
+        for claim_raw, claim, decision in zip(claims_raw, claims, rules_decisions):
+            if decision.action != DecisionType.RETURN_TO_EMPLOYEE:
+                findings = [asdict(item) for item in run_rules(claim, previous)]
+                eligible_input_hashes[claim.claim_id] = _claim_input_sha256(
+                    claim_raw, findings
+                )
+            previous.append(claim)
+        model_outputs = _load_model_outputs(
+            model_outputs_path,
+            required_ids,
+            dataset,
+            eligible_input_hashes,
+        )
 
     predictions = []
     previous = []

@@ -39,7 +39,7 @@
     "clean_case_warning_rate": 0.0,
     "review_note_recall_diagnostic": 1.0,
     "material_issue_recall": 1.0,
-    "evidence_reference_validity": 1.0,
+    "evidence_reference_validity": 0.9821428571428571,
     "appropriate_abstention": 1.0
   },
   "counts": {
@@ -57,7 +57,7 @@
     "expected_review_notes": 3,
     "matched_review_notes": 3,
     "evidence_references": 56,
-    "valid_evidence_references": 56,
+    "valid_evidence_references": 55,
     "abstentions": 4,
     "expected_abstentions": 3
   },
@@ -310,6 +310,84 @@
       ]
     }
   ],
+  "subset_metrics": {
+    "primary_financial": {
+      "name": "primary_financial",
+      "claim_count": 22,
+      "metrics": {
+        "false_return_rate": 0.0,
+        "return_precision": 1.0,
+        "return_recall": 1.0,
+        "return_reason_recall": 1.0,
+        "warning_recall": 1.0,
+        "warning_precision": 0.9166666666666666,
+        "warning_fact_recall_diagnostic": 0.36363636363636365,
+        "unsupported_warning_rate": 0.08333333333333333,
+        "clean_case_warning_rate": 0.0,
+        "review_note_recall_diagnostic": 1.0,
+        "material_issue_recall": 1.0,
+        "evidence_reference_validity": 0.9821428571428571,
+        "appropriate_abstention": 1.0
+      },
+      "counts": {
+        "claims": 22,
+        "clean_cases": 6,
+        "expected_returns": 6,
+        "predicted_returns": 6,
+        "false_returns": 0,
+        "expected_return_reasons": 6,
+        "matched_return_reasons": 6,
+        "expected_warnings": 11,
+        "matched_warnings": 11,
+        "fact_complete_warnings": 4,
+        "unsupported_warnings": 1,
+        "expected_review_notes": 3,
+        "matched_review_notes": 3,
+        "evidence_references": 56,
+        "valid_evidence_references": 55,
+        "abstentions": 4,
+        "expected_abstentions": 3
+      }
+    },
+    "complex_multi_leg": {
+      "name": "complex_multi_leg",
+      "claim_count": 5,
+      "metrics": {
+        "false_return_rate": 0.0,
+        "return_precision": 1.0,
+        "return_recall": 1.0,
+        "return_reason_recall": 1.0,
+        "warning_recall": 1.0,
+        "warning_precision": 1.0,
+        "warning_fact_recall_diagnostic": 0.3333333333333333,
+        "unsupported_warning_rate": 0.0,
+        "clean_case_warning_rate": 0.0,
+        "review_note_recall_diagnostic": 0.0,
+        "material_issue_recall": 1.0,
+        "evidence_reference_validity": 1.0,
+        "appropriate_abstention": null
+      },
+      "counts": {
+        "claims": 5,
+        "clean_cases": 1,
+        "expected_returns": 1,
+        "predicted_returns": 1,
+        "false_returns": 0,
+        "expected_return_reasons": 1,
+        "matched_return_reasons": 1,
+        "expected_warnings": 3,
+        "matched_warnings": 3,
+        "fact_complete_warnings": 1,
+        "unsupported_warnings": 0,
+        "expected_review_notes": 0,
+        "matched_review_notes": 0,
+        "evidence_references": 11,
+        "valid_evidence_references": 11,
+        "abstentions": 0,
+        "expected_abstentions": 0
+      }
+    }
+  },
   "limitations": [
     "The candidate ground truth has not been frozen or independently reviewed.",
     "The rules-only baseline is not expected to recover semantic or route warnings.",

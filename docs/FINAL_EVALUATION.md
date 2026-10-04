@@ -24,13 +24,21 @@ advisory and cannot change that action directly.
 | Unsupported-warning rate | 0.000 | 0.130 |
 | Clean-case warning rate | 0.000 | 0.133 |
 | Material-issue recall | 0.667 | 1.000 |
-| Evidence-reference validity | 1.000 | 1.000 |
+| Evidence-reference validity | 0.985 | 0.990 |
 
 The Hybrid configuration recovered all 20 expected warnings and all 16
 expected deterministic return reasons while preserving zero false returns. Its
 three unsupported warnings reduced warning precision to 20/23 (0.870). Two of
 the 15 clean cases received a warning, giving a clean-case warning rate of
 2/15 (0.133).
+
+Strict full-path validation found one deterministic evidence reference to
+`other_expenses[0].invoice_desc`, an optional field omitted from the frozen
+model-visible JSON. This produces 101/102 valid Hybrid evidence references
+(0.990). The underlying `OTHER_EXPENSE_REVIEW` finding still cites the visible
+expense and attachments; the invalid path is retained and disclosed because
+changing the deterministic findings would invalidate the frozen model-input
+provenance.
 
 `warning_fact_recall_diagnostic` was 0.350 and neutral Review Note recall was
 0.667. These are secondary diagnostics: issue matching is based on claim,

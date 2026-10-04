@@ -4,19 +4,20 @@ ExpenseSight is a human-in-the-loop travel-expense pre-review prototype for fina
 
 ## Current status
 
-This repository contains the first executable baseline with completed Dev evaluation:
+This repository contains the completed executable prototype and frozen Holdout evaluation:
 
 - deterministic policy checks;
 - a decision validator with only two business outcomes;
 - candidate claim and ground-truth datasets kept in separate files;
 - expense lines and one-sentence OCR attachment descriptions stored separately;
 - review triage with `Review Note`, `Warning`, and `Return Reason` outputs;
-- unit tests for return boundaries, output contracts, and resume provenance (40 tests passing);
+- unit tests for return boundaries, output contracts, and provenance (43 tests passing);
 - an OpenRouter adapter for validated LLM review flags and interfaces for optional route facts;
 - a provider-neutral offline evaluation harness for rules-only and hybrid runs;
 - strict model-output validation that prevents an LLM from returning a claim;
 - code-specific oneOf output schemas and taxonomy-aware post-call validation;
 - configuration- and input-hash-aware resume support in the generation script;
+- configuration-, taxonomy-, and input-hash validation during offline Hybrid scoring;
 - dataset component hashes so results cannot silently mix different data versions.
 
 The default model is `google/gemini-3.5-flash-lite` through OpenRouter, using
@@ -74,16 +75,19 @@ python scripts/run_evaluation.py --dataset holdout --configuration rules_only --
 python scripts/run_evaluation.py --dataset holdout --configuration hybrid --model-outputs evals/results/model_outputs_holdout-v1_semantic-review-v2.json --output hybrid_reproduced.json
 ```
 
-The two evaluation commands verify the frozen component hashes before scoring.
+Both evaluation commands verify the frozen dataset component hashes before
+scoring. The Hybrid command additionally requires the matching metadata file
+and verifies the model configuration, review assets, taxonomy contract, and
+per-claim input hashes.
 The reproduced result files should have these SHA-256 hashes:
 
-- Rules-only: `af59f4b60a58cc3ce57a2eefef716f8d71bfc01d56b621ff1ea06d59a0023474`
-- Hybrid: `9967bcd5496c3e00f1cfacc736c14a74103ba365f7508b0ff38f07d769858339`
+- Rules-only: `72e27ceb6f56ace84a20c14cf86a61e8ae81822b908a032bdb565f56b3f0fdd9`
+- Hybrid: `971708f2ccb6e24304e26ddd0b593b7567ae99ca069073983d3b95f6a8a3b57f`
 
 Dataset-building scripts remain available for development, but they are not
 part of final Holdout reproduction and must not be used to edit `holdout-v1`.
 
-To display the three representative final cases offline for the recorded demo:
+To display three representative final cases offline:
 
 ```text
 python scripts/show_demo_cases.py
@@ -141,7 +145,7 @@ not a final holdout result.
 | unsupported_warning_rate | 0.0 | 0.083 |
 | clean_case_warning_rate | 0.0 | 0.0 |
 | material_issue_recall | 0.471 | 1.0 |
-| evidence_reference_validity | 1.0 | 1.0 |
+| evidence_reference_validity | 0.964 | 0.982 |
 | appropriate_abstention | 0.0 | 1.0 |
 
 The hybrid layer finds every annotated material issue while preserving zero
@@ -163,12 +167,18 @@ Dev-tuning cycle.
 | unsupported_warning_rate | 0.0 | 0.130 |
 | clean_case_warning_rate | 0.0 | 0.133 |
 | material_issue_recall | 0.667 | 1.0 |
-| evidence_reference_validity | 1.0 | 1.0 |
+| evidence_reference_validity | 0.985 | 0.990 |
 
 The Hybrid system found all annotated material issues and preserved zero false
 returns. Three unsupported hotel-cap warnings caused two clean cases to be
 flagged; these frozen-test errors are retained and analysed in
 `docs/FINAL_EVALUATION.md`, not used for further prompt tuning.
+
+Strict full-path evidence validation also identified one frozen deterministic
+reference to an omitted optional field (`other_expenses[0].invoice_desc`). The
+finding itself remains supported by the visible expense and attachments, but
+that specific path is not model-visible. It is disclosed rather than rewritten
+after the Holdout run.
 
 ## Repository map
 
@@ -181,13 +191,16 @@ src/        Runtime contracts, deterministic rules, and decision pipeline
 tests/      Automated boundary and rule tests
 ```
 
+The separately submitted written report and video-recording materials are not
+part of this source repository. The `docs/` directory contains only technical
+documentation needed to understand, audit, and reproduce the implementation.
+
 ## Documentation
 
 The suggested reading path is:
 
 | Document | What it covers |
 |---|---|
-| [`docs/FINAL_REPORT.md`](docs/FINAL_REPORT.md) | Final report: problem, design, data, results, critique, risks, and future path |
 | [`docs/PRODUCT.md`](docs/PRODUCT.md) | Persona, inputs, outputs, and achieved metrics |
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Architecture diagram and data flow |
 | [`docs/REAL_WORLD_GROUNDING.md`](docs/REAL_WORLD_GROUNDING.md) | Finance-review practice and the design trade-offs it created |
@@ -197,10 +210,3 @@ The suggested reading path is:
 | [`docs/REVIEW_DECISION_POLICY.md`](docs/REVIEW_DECISION_POLICY.md) | Warning-versus-return boundary |
 | [`docs/FINAL_EVALUATION.md`](docs/FINAL_EVALUATION.md) | Frozen Holdout results and error analysis |
 | [`docs/EVALUATION_HARNESS.md`](docs/EVALUATION_HARNESS.md) | Evaluation and provenance controls |
-| [`docs/DEMO_SCRIPT.md`](docs/DEMO_SCRIPT.md) | Five-to-six-minute demonstration script |
-
-## Next stages
-
-1. Final report delivered at `docs/FINAL_REPORT.md`.
-2. Prepare and record the 5–6 minute face-and-screen demonstration.
-3. Perform the final submission check and create the local commit.

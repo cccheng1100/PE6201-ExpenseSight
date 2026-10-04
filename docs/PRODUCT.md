@@ -58,7 +58,7 @@ returns are resolved before semantic review and therefore skip the LLM call.
 - warning precision: `0.870`;
 - unsupported-warning rate: `0.130`;
 - clean-case warning rate: `0.133`;
-- evidence-reference validity: `1.000`.
+- evidence-reference validity: `0.990` (101/102 full paths valid).
 
 The 15-case complex multi-leg subset achieved `1.000` warning precision,
 warning recall, and material-issue recall. Detailed interpretation, including

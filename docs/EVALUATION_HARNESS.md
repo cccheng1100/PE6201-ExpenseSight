@@ -37,6 +37,12 @@ hash covering the visible claim and deterministic findings. Outputs without
 matching provenance are not reused, even when they still pass structural
 validation.
 
+Offline Hybrid scoring enforces the same boundary. It requires the companion
+metadata file, recomputes the active configuration and per-claim input hashes,
+and re-runs the taxonomy contract validator before accepting saved outputs.
+Replacing an output or mixing artifacts from another configuration therefore
+causes evaluation to stop rather than silently producing a score.
+
 ## Matching policy
 
 Warnings are not compared by prose. The primary issue match is:

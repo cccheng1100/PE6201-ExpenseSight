@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from dataclasses import asdict
+import re
 from typing import Any
 
 from .contracts import Decision, DecisionType
@@ -41,30 +42,58 @@ def _fact_subset_matches(expected: dict[str, Any], predicted: dict[str, Any]) ->
     return all(key in predicted and predicted[key] == value for key, value in expected.items())
 
 
-def _root_name(reference: str) -> str:
-    return reference.split(".", 1)[0].split("[", 1)[0]
+_PATH_SEGMENT = re.compile(r"^(?P<key>[^\[\]]+)(?:\[(?P<selector>[^\[\]]+)\])?$")
 
 
-def evidence_reference_is_valid(reference: str, claim: dict[str, Any]) -> bool:
+def _path_exists(reference: str, value: Any) -> bool:
+    """Resolve every component of a dotted evidence path."""
+    current = value
+    for segment in reference.split("."):
+        match = _PATH_SEGMENT.fullmatch(segment)
+        if match is None or not isinstance(current, dict):
+            return False
+        key = match.group("key")
+        if key not in current:
+            return False
+        current = current[key]
+        selector = match.group("selector")
+        if selector is None:
+            continue
+        if not isinstance(current, list):
+            return False
+        if selector.isdigit():
+            index = int(selector)
+            if index >= len(current):
+                return False
+            current = current[index]
+        elif key == "attachments":
+            current = next(
+                (item for item in current if item.get("attachment_id") == selector),
+                None,
+            )
+            if current is None:
+                return False
+        else:
+            return False
+    return True
+
+
+def evidence_reference_is_valid(
+    reference: str,
+    claim: dict[str, Any],
+    previous_claims: dict[str, dict[str, Any]] | None = None,
+) -> bool:
     """Check that an evidence reference points to model-visible or prior-claim data."""
     if reference.startswith("previous_claims"):
-        return True
-    root = _root_name(reference)
-    if root not in claim:
-        return False
-    if "[" not in reference:
-        return True
-
-    prefix, remainder = reference.split("[", 1)
-    selector = remainder.split("]", 1)[0]
-    collection = claim.get(prefix)
-    if not isinstance(collection, list):
-        return False
-    if selector.isdigit():
-        return int(selector) < len(collection)
-    if prefix == "attachments":
-        return any(item.get("attachment_id") == selector for item in collection)
-    return False
+        match = re.fullmatch(r"previous_claims\[([^\]]+)\](?:\.(.+))?", reference)
+        if match is None or previous_claims is None:
+            return False
+        previous = previous_claims.get(match.group(1))
+        if previous is None:
+            return False
+        nested = match.group(2)
+        return nested is None or _path_exists(nested, previous)
+    return _path_exists(reference, claim)
 
 
 def decision_to_record(decision: Decision) -> dict[str, Any]:
@@ -113,6 +142,7 @@ def evaluate_records(
     expected_abstention_keys: set[tuple[str, str, str]] = set()
     clean_ids: set[str] = set()
     cases: list[dict[str, Any]] = []
+    previous_claims: dict[str, dict[str, Any]] = {}
 
     for claim_id in expected_ids:
         claim = claim_by_id[claim_id]
@@ -162,7 +192,9 @@ def evaluate_records(
         for item in predicted.get("return_reasons", []) + predicted.get("warnings", []) + predicted.get("review_notes", []):
             for reference in item.get("evidence_refs", []):
                 evidence_total += 1
-                evidence_valid += int(evidence_reference_is_valid(reference, claim))
+                evidence_valid += int(
+                    evidence_reference_is_valid(reference, claim, previous_claims)
+                )
 
         for item in predicted.get("abstentions", []):
             abstention_keys.add((claim_id, item["task_code"], item["entity_ref"]))
@@ -178,6 +210,7 @@ def evaluate_records(
             "predicted_warnings": [item["warning_code"] for item in predicted.get("warnings", [])],
             "predicted_abstentions": [item["task_code"] for item in predicted.get("abstentions", [])],
         })
+        previous_claims[claim_id] = claim
 
     correct_return_cases = expected_return_cases & predicted_return_cases
     false_return_cases = predicted_return_cases - expected_return_cases

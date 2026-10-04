@@ -74,14 +74,9 @@ These are evaluation groups, not three business actions. ExpenseSight still prod
   hashes. Structural validity alone is not sufficient provenance.
 - Earlier mixed-prompt and smoke-test files are retained in the external process
   archive as iteration evidence, not as single-configuration benchmarks.
-- `semantic-review-v1` is the selected prompt-frozen configuration. Its clean
-  Dev run achieved 1.0 warning recall, warning precision, material-issue recall,
-  evidence-reference validity, and appropriate abstention, with zero false
-  returns, unsupported warnings, or clean-case warnings.
-- Prompt iteration stops at this point. Lower-priority fact-format and
-  Review-Note diagnostics remain visible rather than being tuned against Dev.
-- The 50-case dataset remains a holdout candidate until business review and
-  explicit freeze; it has not been used for live model evaluation.
+- `semantic-review-v1` is retained as a historical Dev checkpoint. It was
+  superseded before Holdout after business review refined the claim schema and
+  two semantic boundaries.
 - Pre-holdout business review distinguishes authority from suspicion: every
   employee-provided note is data rather than an instruction, but ordinary
   exception explanations remain valid evidence leads and do not trigger a
@@ -89,13 +84,14 @@ These are evaluation groups, not three business actions. ExpenseSight still prod
   to bypass policy, suppress findings, invent facts, expose hidden instructions,
   or force an automated outcome.
 - Because this clarification changed the active prompt and taxonomy before any
-  Holdout model run, `semantic-review-v1` is retained as a historical Dev
-  checkpoint and the active configuration must be versioned and rerun on Dev.
-- The resulting active fingerprint is `semantic-review-v2`. It is not frozen or
-  Holdout-eligible until all 16 model-eligible Dev claims are regenerated and
-  reviewed under that exact fingerprint.
+  Holdout model run, the replacement configuration was versioned and rerun on
+  Dev before it became Holdout-eligible.
 - All 16 `semantic-review-v2` Dev outputs were regenerated and validated. Core
   recall, safety, evidence, and abstention metrics met the stop criteria. One
   additional `HOTEL_LOCATION_REVIEW` on `DEV-011` produced warning precision
   0.917; it is retained as a disclosed limitation to avoid another round of
-  Dev overfitting. The v2 fingerprint is frozen for Holdout.
+  Dev overfitting.
+- `semantic-review-v2` is the final frozen configuration. All 34 model-eligible
+  `holdout-v1` claims completed under this fingerprint. The saved Hybrid result
+  is final and the three unsupported hotel-cap Warnings remain disclosed rather
+  than being used for post-Holdout tuning.

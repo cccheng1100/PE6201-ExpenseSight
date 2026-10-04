@@ -23,7 +23,16 @@ class EvaluationTests(unittest.TestCase):
         self.assertTrue(evidence_reference_is_valid("transport_legs[0].amount_rmb", claim))
         self.assertTrue(evidence_reference_is_valid("attachments[ATT-1].ocr_description", claim))
         self.assertFalse(evidence_reference_is_valid("transport_legs[3].amount_rmb", claim))
+        self.assertFalse(evidence_reference_is_valid("transport_legs[0].missing", claim))
+        self.assertFalse(evidence_reference_is_valid("attachments[ATT-1].missing", claim))
         self.assertFalse(evidence_reference_is_valid("secret_field", claim))
+        previous = {"C0": {"claim_id": "C0", "employee_name": "B"}}
+        self.assertTrue(
+            evidence_reference_is_valid("previous_claims[C0].employee_name", claim, previous)
+        )
+        self.assertFalse(
+            evidence_reference_is_valid("previous_claims[FAKE].employee_name", claim, previous)
+        )
 
     def test_wording_is_not_used_but_material_facts_are_diagnosed(self) -> None:
         claims = [{"claim_id": "C1", "employee_name": "A", "attachments": []}]
