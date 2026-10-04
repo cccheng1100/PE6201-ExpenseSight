@@ -30,15 +30,16 @@ RETURN_TO_EMPLOYEE     PROCEED_TO_HUMAN
 
 External intelligence is advisory. The validator prevents model or route-tool
 output from creating an automatic return. A deterministic return short-circuits
-the semantic review, so the LLM is not called and advisory outputs are not
+the semantic review, so the LLM is never called and advisory outputs are not
 mixed into a terminal employee action.
 
-The triage guardrail also checks evidence provenance, reliability, plausible
-exceptions, and employee actionability before a rule finding may become a
-return reason. Neutral context is carried separately as `Review Note` output.
+Before a rule finding may become a return reason, the triage guardrail checks
+evidence provenance and reliability, plausible exceptions, and whether the
+employee can act on it. Neutral context is carried separately as a
+`Review Note`.
 
 See `REVIEW_DECISION_POLICY.md` for the annotation and runtime boundary.
 
 Expense lines and attachments are not assumed to be one-to-one. Each attachment
 keeps a one-sentence OCR description plus links to relevant expense lines. This
-allows duplicate uploads to be ignored without treating them as duplicate spend.
+lets duplicate uploads be ignored without treating them as duplicate spend.

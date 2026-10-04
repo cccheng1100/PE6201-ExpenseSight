@@ -1,49 +1,85 @@
 # ExpenseSight
 
-ExpenseSight is a human-in-the-loop travel-expense pre-review prototype for finance reviewers in large enterprises that digitise expense reimbursement.
+A human-in-the-loop travel-expense pre-review prototype for finance reviewers in
+large enterprises that digitise expense reimbursement.
 
-## Current status
+ExpenseSight pre-screens employee travel claims **before** human review: it uses
+deterministic policy rules to catch the mechanical failures a finance team should
+never see, then calls a foundation model to surface the *semantic* issues a rules
+engine cannot — while keeping every business decision with a human. On the frozen
+50-case Holdout it recovered **every annotated material issue and every expected
+warning, with no false returns observed** in this evaluation set — at a measured,
+disclosed over-warning cost.
 
-This repository contains the completed executable prototype and frozen Holdout evaluation:
+Thanks to the course instructor for the Milestone 1 Problem Statement feedback,
+the evaluation now reports the false-return rate beside recall, and multi-leg
+itinerary inconsistencies are planted and counted as a separate subset; the
+feedback's confirmation that only rule-confirmed failures may return a claim —
+and that the model never issues a rejection itself — became the human-in-the-loop
+boundary enforced by the runtime. Two paid services outside the course
+OpenRouter key (the OpenAI Responses API and Google Maps Routes) were left as
+interfaces (see `docs/ARCHITECTURE.md`) and are planned future optimisations:
+both need separate pricing, which was not settled under the course budget, so
+they will be added in a later pass once that is confirmed.
 
-- deterministic policy checks;
-- a decision validator with only two business outcomes;
-- candidate claim and ground-truth datasets kept in separate files;
-- expense lines and one-sentence OCR attachment descriptions stored separately;
-- review triage with `Review Note`, `Warning`, and `Return Reason` outputs;
-- unit tests for return boundaries, output contracts, and provenance (43 tests passing);
-- an OpenRouter adapter for validated LLM review flags and interfaces for optional route facts;
-- a provider-neutral offline evaluation harness for rules-only and hybrid runs;
-- strict model-output validation that prevents an LLM from returning a claim;
-- code-specific oneOf output schemas and taxonomy-aware post-call validation;
-- configuration- and input-hash-aware resume support in the generation script;
-- configuration-, taxonomy-, and input-hash validation during offline Hybrid scoring;
-- dataset component hashes so results cannot silently mix different data versions.
+## Results at a glance
 
-The default model is `google/gemini-3.5-flash-lite` through OpenRouter, using
-temperature 0 and strict structured JSON outputs. All 16 model-eligible Dev
-claims were run under the same `semantic-review-v1` configuration fingerprint.
-That run remains the historical Dev checkpoint. Pre-holdout human business
-review subsequently refined the claim schema and two semantic boundaries. The
-active `semantic-review-v2` fingerprint completed a fresh 16-call Dev
-revalidation and is frozen for Holdout. The human-reviewed 50-case dataset is
-now frozen independently as `holdout-v1`. All 34 model-eligible Holdout calls
-completed under the frozen configuration and the final Hybrid result is saved.
+The hybrid design (deterministic rules + advisory LLM) is justified only by what
+it adds over the rules-only baseline on the same frozen test set. All figures
+below are measured on the single, author-labelled 50-case Holdout; they describe
+the prototype's behaviour on that set, not a production guarantee:
 
-`holdout-v1` contains 15 clean cases, 19 warning-review cases, and 16
-deterministic-return cases. Its separate descriptor locks claims, ground truth,
-manifest, and policy by SHA-256.
+- **Every annotated material issue was recovered** (rules-only: 66.7%) — above
+  the 90% target on this evaluation set.
+- **No false returns were observed** in either configuration — within this set,
+  no compliant claim was sent back, and the system itself never approves or pays
+  anything.
+- **Every expected warning was recovered** (rules-only: 40.0%) at a warning
+  precision of 0.870 — the precision cost of the added semantic coverage is
+  measured and disclosed, not hidden.
+- **Evidence-reference validity 98.5% / 99.0%** (rules-only / hybrid) — each
+  finding stays traceable to visible input evidence.
+
+The system is deliberately human-in-the-loop: only a deterministic,
+policy-confirmed failure can produce `RETURN_TO_EMPLOYEE`; every model finding is
+advisory and cannot change that action.
+
+## Why the design looks the way it does
+
+The warning-versus-return boundary comes from five years of hands-on finance
+review, not from the prompt. For example, a missing or expired pre-approval
+*warns* instead of returning, because urgent dispatch often precedes paperwork;
+an over-cap hotel stay *returns* only after the employee's own deduction is read.
+The full practice-to-design mapping is documented in
+[`docs/REAL_WORLD_GROUNDING.md`](docs/REAL_WORLD_GROUNDING.md).
+
+## What it does
+
+A claim can combine approvals, several journey legs, hotel deductions,
+allowances, receipts, and free-text employee explanations. ExpenseSight:
+
+1. validates the structured claim and runs deterministic policy checks
+   (arithmetic, dates, caps, approval scope);
+2. for claims that pass, calls one LLM that reads the claim, the policy context,
+   and one-sentence OCR attachment descriptions, and returns only advisory
+   findings;
+3. always ends in one of two business actions: `RETURN_TO_EMPLOYEE` (only from a
+   deterministic, policy-confirmed failure) or `PROCEED_TO_HUMAN` (everything
+   else, including every model finding).
+
+The model is **structurally unable** to return a claim, approve payment, or
+invent evidence.
 
 ## Safety design
 
-The prototype's safety properties form one design rather than a collection of
-prompt instructions.
+The safety properties form one design rather than a collection of prompt
+instructions.
 
 **Decision boundary.** Only a deterministic, policy-confirmed rule failure may
 produce `RETURN_TO_EMPLOYEE`. All other cases produce `PROCEED_TO_HUMAN`,
-including LLM findings, route anomalies, unclear evidence, unverified exceptions,
-and low-confidence analysis. The prototype never approves, rejects, pays, or
-modifies a financial amount.
+including LLM findings, route anomalies, unclear evidence, unverified
+exceptions, and low-confidence analysis. The prototype never approves, rejects,
+pays, or modifies a financial amount.
 
 **Employee text is data, not authority.** Employee notes and attachment text
 cannot issue instructions to the review system. An ordinary explanation such as
@@ -55,6 +91,35 @@ or force an outcome raise the `PROMPT_INJECTION_TEXT` Warning.
 **Output contract.** Strict JSON Schemas and post-call validation prevent the
 model from returning a claim, authorising payment, or inventing evidence. Every
 finding carries an entity and evidence references so a reviewer can verify it.
+
+## Repository contents
+
+- deterministic policy checks;
+- a decision validator with only two business outcomes;
+- candidate claim and ground-truth datasets kept in separate files;
+- expense lines and one-sentence OCR attachment descriptions stored separately;
+- review triage with `Review Note`, `Warning`, and `Return Reason` outputs;
+- unit tests for return boundaries, output contracts, and provenance
+  (43 tests passing);
+- an OpenRouter adapter for validated LLM review flags and interfaces for
+  optional route facts;
+- a provider-neutral offline evaluation harness for rules-only and hybrid runs;
+- strict model-output validation that prevents an LLM from returning a claim;
+- code-specific `oneOf` output schemas and taxonomy-aware post-call validation;
+- configuration-, taxonomy-, and input-hash validation during offline Hybrid
+  scoring;
+- dataset component hashes so results cannot silently mix different data
+  versions.
+
+**Current configuration.** The default model is `google/gemini-3.5-flash-lite`
+through OpenRouter, using temperature 0 and strict structured JSON outputs. All
+16 model-eligible Dev claims were run under the same `semantic-review-v1`
+fingerprint; that run remains the historical Dev checkpoint. A business review
+then refined the claim schema and two semantic boundaries, the active
+`semantic-review-v2` fingerprint was revalidated on a fresh 16-call Dev run and
+frozen, and the human-reviewed 50-case set was frozen independently as
+`holdout-v1` — 15 clean, 19 warning-review, and 16 deterministic-return cases,
+with a SHA-256 descriptor locking claims, ground truth, manifest, and policy.
 
 ## Quick start and offline reproduction
 
@@ -128,12 +193,13 @@ match. Legacy or mixed-configuration outputs are deliberately not reused.
 - Final Holdout evaluation is complete. Do not make another live Holdout call
   or tune prompts against the frozen results.
 
-## Dev evaluation results (single configuration, not final)
+## Evaluation results
 
-The following results are from the 22-case Dev set using
-`google/gemini-3.5-flash-lite`. All 16 model-eligible claims were generated and
-validated under one configuration fingerprint. This is the selected Dev result,
-not a final holdout result.
+### Dev (single configuration, not final)
+
+From the 22-case Dev set using `google/gemini-3.5-flash-lite`. All 16
+model-eligible claims were generated and validated under one configuration
+fingerprint. This is the selected Dev result, not a final holdout result.
 
 | Metric | Rules-only | Hybrid |
 |---|---:|---:|
@@ -148,14 +214,14 @@ not a final holdout result.
 | evidence_reference_validity | 0.964 | 0.982 |
 | appropriate_abstention | 0.0 | 1.0 |
 
-The hybrid layer finds every annotated material issue while preserving zero
-false returns and zero clean-case warnings. One extra hotel-location warning on
-the already-problematic `DEV-011` case lowers warning precision to 0.917. The
-lower-priority fact-completeness diagnostic is 0.364 and Review Note recall is
-1.0. The deviation is reported transparently rather than triggering another
-Dev-tuning cycle.
+The hybrid layer recovered every annotated material issue on the Dev set, with
+no false returns or clean-case warnings observed. One extra hotel-location
+warning on the already-problematic `DEV-011` case lowers warning precision to
+0.917. The lower-priority fact-completeness diagnostic is 0.364 and Review Note
+recall is 1.0. The deviation is reported transparently rather than triggering
+another Dev-tuning cycle.
 
-## Final Holdout results
+### Final Holdout
 
 | Metric | Rules-only | Hybrid |
 |---|---:|---:|
@@ -169,10 +235,10 @@ Dev-tuning cycle.
 | material_issue_recall | 0.667 | 1.0 |
 | evidence_reference_validity | 0.985 | 0.990 |
 
-The Hybrid system found all annotated material issues and preserved zero false
-returns. Three unsupported hotel-cap warnings caused two clean cases to be
-flagged; these frozen-test errors are retained and analysed in
-`docs/FINAL_EVALUATION.md`, not used for further prompt tuning.
+The Hybrid system recovered all annotated material issues on the frozen
+Holdout, with no false returns observed. Three unsupported hotel-cap warnings
+caused two clean cases to be flagged; these frozen-test errors are retained and
+analysed in `docs/FINAL_EVALUATION.md`, not used for further prompt tuning.
 
 Strict full-path evidence validation also identified one frozen deterministic
 reference to an omitted optional field (`other_expenses[0].invoice_desc`). The
@@ -191,22 +257,19 @@ src/        Runtime contracts, deterministic rules, and decision pipeline
 tests/      Automated boundary and rule tests
 ```
 
-The separately submitted written report and video-recording materials are not
-part of this source repository. The `docs/` directory contains only technical
-documentation needed to understand, audit, and reproduce the implementation.
-
 ## Documentation
 
-The suggested reading path is:
+Each file below is optional depth. The key claims — results, safety boundary,
+and grounding in real finance practice — are covered in this README; open a file
+when you want the full reasoning and evidence.
 
-| Document | What it covers |
-|---|---|
-| [`docs/PRODUCT.md`](docs/PRODUCT.md) | Persona, inputs, outputs, and achieved metrics |
-| [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Architecture diagram and data flow |
-| [`docs/REAL_WORLD_GROUNDING.md`](docs/REAL_WORLD_GROUNDING.md) | Finance-review practice and the design trade-offs it created |
-| [`docs/DEVELOPMENT_JOURNEY.md`](docs/DEVELOPMENT_JOURNEY.md) | Difficulties, fixes, tuning decisions, and limitations |
-| [`docs/DECISION_LOG.md`](docs/DECISION_LOG.md) | Confirmed design and evaluation decisions |
-| [`docs/PROMPT_DESIGN.md`](docs/PROMPT_DESIGN.md) | Prompt architecture and iteration history |
-| [`docs/REVIEW_DECISION_POLICY.md`](docs/REVIEW_DECISION_POLICY.md) | Warning-versus-return boundary |
-| [`docs/FINAL_EVALUATION.md`](docs/FINAL_EVALUATION.md) | Frozen Holdout results and error analysis |
-| [`docs/EVALUATION_HARNESS.md`](docs/EVALUATION_HARNESS.md) | Evaluation and provenance controls |
+- [`docs/PRD.md`](docs/PRD.md) — product requirements: the compliance-driven reimbursement context and scope.
+- [`docs/PRODUCT.md`](docs/PRODUCT.md) — product definition and target versus achieved metrics.
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — pipeline and data flow.
+- [`docs/REAL_WORLD_GROUNDING.md`](docs/REAL_WORLD_GROUNDING.md) — the finance-review practice behind the design.
+- [`docs/DEVELOPMENT_JOURNEY.md`](docs/DEVELOPMENT_JOURNEY.md) — difficulties, fixes, tuning decisions, and limitations.
+- [`docs/DECISION_LOG.md`](docs/DECISION_LOG.md) — confirmed design and evaluation decisions.
+- [`docs/PROMPT_DESIGN.md`](docs/PROMPT_DESIGN.md) — prompt architecture and iteration history.
+- [`docs/REVIEW_DECISION_POLICY.md`](docs/REVIEW_DECISION_POLICY.md) — the warning-versus-return boundary.
+- [`docs/FINAL_EVALUATION.md`](docs/FINAL_EVALUATION.md) — frozen Holdout results and error analysis.
+- [`docs/EVALUATION_HARNESS.md`](docs/EVALUATION_HARNESS.md) — evaluation and provenance controls.
